@@ -1,0 +1,29 @@
+
+.authentication {
+  text-align: left;
+}
+
+legend {
+  color: $font-color;
+  padding-top: 10px;
+}
+
+.account-change {
+  // display: none;
+}
+
+[type=submit] {
+  border: 0 none;
+  border-radius: 5px;
+  color: $font-color;
+  padding: 5px 15px;
+}
+
+.sign-up-section {
+  display: none;
+}
+
+
+.sign-in-section {
+  display: none;
+}
