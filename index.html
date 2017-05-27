@@ -1,8 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>My Wine Cellar</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- linking google fonts -->
+      <!-- <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Roboto" rel="stylesheet"> -->
+      <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <!--  Scripts: These are mandatory for materialize to work-->
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script defer src="assets/scripts/js/materialize.js"></script>
+    <script defer src="assets/scripts/js/init.js"></script>
+    <script defer src="assets/scripts/js/materialize.min.js"></script>
 
       <!-- Do not add `link` tags unless you know what you are doing -->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -11,15 +20,143 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
-    <body class="container-fluid">
-      <h1>Example</h1>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-      eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-      minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-      ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-      cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
-      est laborum.</p>
+<body>
+
+  <nav role="navigation">
+    <div class="nav-wrapper container">
+      <a href="#!" class="brand-logo">Logo</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li class="sign-up-menu"><a href="#">Sign Up</a></li>
+        <li class="sign-in-menu"><a href="#">Sign In</a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li class="sign-up-menu"><a href="#">Sign Up</a></li>
+        <li class="sign-in-menu"><a href="#">Sign In</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+
+    <!-- <section class="container global-alert">
+      <div id="global-alert-danger" class="alert alert-danger alert-dismissibl" role="alert">
+        <strong>Error!</strong><span id="alert-danger-message"></span>
+      </div>
+      <div id="global-alert-success" class="alert alert-success alert-dismissible" role="alert">
+        <strong>Success!</strong><span id="alert-success-message"></span>
+      </div>
+    </section> -->
+
+
+        <div class="row container sign-up-section">
+           <form id = "sign-up" class="col s12">
+             <div class="row">
+               <div class="input-field col s6">
+                 <input name="credentials[email]" id="sign-up-email" type="text" class="validate">
+                 <label for="email">Email</label>
+               </div>
+             </div>
+
+             <div class="row">
+                 <div class="input-field col s6">
+                 <input type="password" name="credentials[password]" id="sign-up-password" class="validate">
+                 <label for="last_name">Password</label>
+               </div>
+             </div>
+
+             <div class="row">
+               <div class="input-field col s6">
+                 <input type="password" name="credentials[password_confirmation]" id="sign-up-password-confirm" class="validate">
+                 <label for="last_name">Confirm Password</label>
+               </div>
+             </div>
+             <button type="submit" name="submit" class="waves-effect waves-light btn">
+           Sign Up
+         </button>
+         <button type="reset" class="btn btn-secondary">Cancel</button>
+           </form>
+         </div>   <!-- End of Sign Up Form -->
+
+
+         <div class="row container sign-in-section">
+            <form id = "sign-in" class="col s12">
+              <div class="row">
+                <div class="input-field col s6">
+                  <input name="credentials[email]" id="sign-in-email" type="text" class="validate">
+                  <label for="email">Email</label>
+                </div>
+              </div>
+
+              <div class="row">
+                  <div class="input-field col s6">
+                  <input type="password" name="credentials[password]" id="sign-in-password" class="validate">
+                  <label for="last_name">Password</label>
+                </div>
+              </div>
+
+              <button type="submit" name="submit" class="waves-effect waves-light btn">
+            Sign In
+          </button>
+          <button type="reset" class="btn btn-secondary">Cancel</button>
+            </form>
+          </div>   <!-- End of Sign In Form -->
+
+
+<!--
+      <section class="container account-change">
+        <form id="change-password">
+          <fieldset>
+            <legend>Change password</legend>
+            <input type="password" name="passwords[old]" id="old-password" placeholder="Old Password" required>
+            <input type="password" name="passwords[new]" id="new-password" placeholder="New Password" required>
+            <button type="submit" class="btn btn-primary">Change password</button>
+            <button type="reset" class="btn btn-secondary">Cancel</button>
+          </fieldset>
+        </form>
+      </section>
+ -->
+
+ <!-- WINE SECTION -->
+      <!-- <div class="row">
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="http://cdn.ct-static.com/labels/578584.jpg" height="250" width="250" class="img-fluid" alt="mazzocco">
+            <div class="mazzocco wines">
+              <h3>Mazzocco</h3>
+                <div class="rating">Rating: 8 </div>
+                    <div class="tasting-notes"> Delicious Wine. Would buy again </div>
+              <p><a href="#" class="btn btn-primary" role="button">Details</a> <a href="#" class="btn btn-default" role="button">Cancel</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-md-4">
+          <div class="thumbnail">
+            <img src="https://s3.amazonaws.com/thewinespies-production/uploads/product/image/1960-6da9084d1318bab2addbe9338c4249ae63eb1769/tall_product_photo.jpg" height="250" width="250" class="img-fluid" alt="Petroni">
+            <div class="mazzocco wines">
+              <h3>Petroni</h3>
+                <div class="rating">Rating: 6 </div>
+                    <div class="tasting-notes"> Delicious Wine. Would buy again </div>
+              <p><a href="#" class="btn btn-primary" role="button">Details</a> <a href="#" class="btn btn-default" role="button">Cancel</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <div class="thumbnail">
+              <img src="images/genericWine.png" height="250" width="250" class="img-fluid" alt="generic">
+              <div class="generic wines">
+                <h3>Generic Wine</h3>
+                  <div class="rating">Rating: 4 </div>
+                      <div class="tasting-notes"> TBD </div>
+                <p><a href="#" class="btn btn-primary" role="button">Details</a> <a href="#" class="btn btn-default" role="button">Cancel</a></p>
+              </div>
+            </div>
+          </div>
+        </div> -->
+
     </body>
 </html>
