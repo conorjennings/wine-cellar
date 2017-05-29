@@ -29,17 +29,17 @@ const signOut = () => {
   })
 }
 
-const changePassword = (data) => {
+const changePassword = function (data) {
   return $.ajax({
-    url: config.apiOrigin + '/change-password/' + store.user.id,
     method: 'PATCH',
+    url: config.apiOrigin + '/change-password/' + store.user.id,
     headers: {
       Authorization: 'Token token=' + store.user.token
-      // contentType: 'application/json'
     },
     data: data
   })
 }
+
 
 // Exported since used in other code like events.js
 module.exports = {

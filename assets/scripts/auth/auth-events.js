@@ -3,35 +3,31 @@
 const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./auth-api')
 const ui = require('./auth-ui')
-let origPass // Had to init this global for some reason?
+const helpers = require('./../helpers/helper-events')
 
 const onSignUp = function (event) {
   event.preventDefault()
-  const data = getFormFields(this)
-  console.log('onSignUp, data: ', data)
+  const data = getFormFields(event.target)
+
   if (data.credentials.password !== data.credentials.password_confirmation) {
-    console.log ('Sign up fails with incorrect passwords')
-    // $('.sign-up-error-alert').html('Passwords don\'t match. Please try again')
-    // $('.sign-up-error-alert').show()
+
+    let errorMessage = $('<h4>Either your password doesn\'t  match or the user id is taken</h4>');
+    Materialize.toast(errorMessage, 3000, 'rounded red')
+    $('#sign-up-form').trigger('reset')
+    helpers.setFocusToTextBox('sign-up-form-email')
   } else {
     api.signUp(data)
-    .then(function (data) {
-      ui.signUpSuccess(data)
-    })
-    .catch(ui.signUpFailure)
+    .done(ui.signUpSuccess)
+    .fail(ui.signUpFailure)
   }
 }
 
 const onSignIn = function (event) {
   event.preventDefault()
   const data = getFormFields(this)
-  origPass = data.credentials.password
   api.signIn(data)
-  .then(function (data) {
-    ui.signInSuccess(data)
-    // $('#sign-in')[0].reset() // This fixed issue log 799
-  })
-  .catch(ui.signInFailure)
+  .done(ui.signInSuccess)
+  .fail(ui.signInFailure)
 }
 
 const onSignOut = function (event) {
@@ -43,78 +39,55 @@ const onSignOut = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  const data = getFormFields(this)
-
-  if (data.passwords.new !== data.passwords.confirm || origPass !== data.passwords.old) {
-    $('.chg-passw-error-alert').html('Either your current password is incorrect or your new passwords don\'t match.')
-    $('.chg-passw-error-alert').show()
-    // This clears out the bootstrap alert box after a few seconds:
-    // Source: http://stackoverflow.com/questions/23101966/bootstrap-alert-auto-close
-    setTimeout(function () {
-      $('.chg-passw-error-alert').alert('close'); $('.change-password-section').hide(); $('#change-password').trigger('reset')
-    }, 3000)
-  } else {
-    api.changePassword(data)
-      .then(ui.changePasswordSuccess)
-      .catch(ui.changePasswordFailure)
-    // $('#change-password')[0].reset() // clear out form after successfully changing password
-  }
+  const data = getFormFields(event.target)
+  api.changePassword(data)
+  .done(ui.changePasswordSuccess)
+  .fail(ui.changePasswordFailure)
 }
 
 const onShowSignIn = function () {
   $('.sign-in-section').show()
   $('.sign-up-section').hide()
-  $('#sign-up-email').val('')
-  $('#sign-up-password').val('')
-  $('#sign-up-password-confirm').val('')
-  // $('.sign-up-menu').hide() // Prevent user for opening sign up when sign in is open
+  $('#sign-in-form-email').val('')
+  $('#sign-in-form-password').val('')
+  $('#sign-up-form-email').val('')
+  $('#sign-up-form-password').val('')
+  $('#sign-up-form-password-confirm').val('')
 }
 
 const onHideSignIn = function () {
   $('.sign-in-section').hide()
-  // $('.sign-up-menu').show()
 }
 
 const onShowSignUp = function () {
+  console.log ('got to onShowSignUp')
   $('.sign-up-section').show()
   $('.sign-in-section').hide()
-  $('#sign-in-email').val('')
-  $('#sign-in-password').val('')
-  // $('.main-menu').hide() // Prevent user for opening sign in when sign up is open
-}
-
-const onHideSignUp = function () {
-  $('.sign-up-section').hide()
-  $('.sign-in-menu').show()  // Allow user for opening sign in when sign up is cancelled
+  $('#sign-up-form-email').val('')
+  $('#sign-up-form-password').val('')
+  $('#sign-up-form-password-confirm').val('')
 }
 
 const onShowChangePassword = function () {
   $('.change-password-section').show()
 }
 
-const onHideChangePassword = function () {
+  const onHideChangePassword = function () {
   $('.change-password-section').hide()
 }
 
-const onShowSignUpMenu = function () {
-  $('.sign-up-menu').show()
-  $('.sign-in-section').hide()
-}
 
-
-const addHandlers = () => {
+const authHandlers = () => {
   $('.change-password-menu').on('click', onShowChangePassword)
-  $('#change-password').on('submit', onChangePassword)
+  $('#change-password-form').on('submit', onChangePassword)
   $('#change-password').on('reset', onHideChangePassword)
   $('.sign-up-menu').on('click', onShowSignUp)
-  $('#sign-up').on('submit', onSignUp)
-  $('#sign-up').on('reset', onHideSignUp)
+  $('#sign-up-form').on('submit', onSignUp)
   $('.sign-in-menu').on('click', onShowSignIn)
-  $('#sign-in').on('submit', onSignIn)
-  $('#sign-in').on('reset', onHideSignIn, onShowSignUpMenu)
+  $('#sign-in-form').on('submit', onSignIn)
   $('.sign-out-menu').on('click', onSignOut)
 }
 
 module.exports = {
-  addHandlers
+  authHandlers
 }
