@@ -54,6 +54,10 @@ const signInFailure = (error) => {
 
 const signOutSuccess = () => {
   store.user = null // this gets rid of data stored in cache
+
+  let msg = $('<h4>You have successfully signed out..</h4>');
+  Materialize.toast(msg, 3000, 'rounded green')
+
   $('.sign-up-menu').show()
   $('.sign-in-menu').show()
   $('.sign-out-menu').hide()
@@ -92,7 +96,6 @@ const signOutFailure = (error) => {
 }
 
 const changePasswordSuccess = () => {
-
   let msg = $('<h4>Password successfully changed</h4>');
   Materialize.toast(msg, 3000, 'rounded green')
   $('#change-password-form').trigger('reset')
