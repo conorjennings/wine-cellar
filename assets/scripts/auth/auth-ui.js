@@ -1,108 +1,110 @@
 'use strict'
 
 const store = require('../store')
-let newUserFlag = false
+const helpers = require('./../helpers/helper-events')
 
 const signUpSuccess = (data) => {
   store.user = data.user
-
-  // This closes the form after a successful sign up:
-  $('#sign-up').trigger('reset') // http://stackoverflow.com/questions/16452699/how-to-reset-a-form-using-jquery-with-reset-method
-  $('.sign-up-menu').hide()
-  newUserFlag = 'true'
+  let msg = $('<h4>Sign Up successful. Please sign in.</h4>');
+  Materialize.toast(msg, 3000, 'rounded green')
+  $('#sign-up-form').trigger('reset')
+  $('.sign-in-section').show()
+  $('.sign-up-section').hide()
+  helpers.setFocusToTextBox('sign-in-form-email')
 }
 
 const getNewUserFlag = function () {
   return newUserFlag
 }
 const signUpFailure = (error) => {
-  console.error('signUpFailure, error message is: ', error)
-  // $('.sign-up-error-alert').html('User already exists. Try a different email address')
-  // $('.sign-up-error-alert').show()
+  console.error(error)
+  let errorMessage = $('<h4>Either your password doesn\'t  match or the user id is taken</h4>');
+  Materialize.toast(errorMessage, 2000, 'rounded red')
+  $('#sign-up-form').trigger('reset')
+  helpers.setFocusToTextBox('sign-up-form-email')
 }
 
 // Important to use tokens (change each time you sign in) over using IDs
 const signInSuccess = (data) => {
-  // just save whatever you got back during a sign in in this store object that will hold the token.
   store.user = data.user
 
-  $('.sign-up-menu').hide()
-  // $('#sign-in').trigger('reset') // This fixed issue log 799
-  $('.sign-in-menu').hide()
-  $('.sign-out-menu').show()
-  $('.change-password-menu').show()
-  $('.chore-menu').show()
-
-  $('.sign-up-section').hide()
+  let msg = $('<h4>You are now signed in..</h4>');
+  Materialize.toast(msg, 3000, 'rounded green')
+  $('#sign-in-form').trigger('reset')
   $('.sign-in-section').hide()
+
+  $('.video-container').hide()
+  $('.sign-out-menu').show()
+  $('.sign-in-menu').hide()
+  $('.sign-up-menu').hide()
+  $('.change-password-menu').show()
+  $('.sign-up-section').hide()
+
+  $('.chore-menu').show()
   $('.home-menu').show()
 }
 
 const signInFailure = (error) => {
-  console.error('signInFailure. Error: ', error)
-  $('.sign-in-error-alert').html('Incorrect Email or Password or User Does Not Exist.')
-  $('.sign-in-error-alert').show()
-  // This clears out the bootstrap alert box after a few seconds:
-  // Source: http://stackoverflow.com/questions/23101966/bootstrap-alert-auto-close
-  // NOTE: You must hide in this EXACT order for it to work!
-  setTimeout(function () {
-    $('.sign-in-section').hide(); $('.sign-in-error-alert').hide(); $('#sign-in').trigger('reset')
-  }, 2000)
+
+  let errorMessage = $('<h4>Incorrect Email or Password</h4>');
+  Materialize.toast(errorMessage, 2000, 'rounded red')
+  $('#sign-in-form').trigger('reset')
+  helpers.setFocusToTextBox('sign-in-form-email')
 }
 
 const signOutSuccess = () => {
   store.user = null // this gets rid of data stored in cache
-  $('.home-menu').hide()
   $('.sign-up-menu').show()
+  $('.sign-in-menu').show()
+  $('.sign-out-menu').hide()
+  // $('.video-container').reset()
+
+
+  $('#sign-up-form').show()
   $('.sign-in-menu').show()
   $('.change-password-menu').hide()
   $('.sign-out-menu').hide()
-  $('.chore-menu').hide()
-  $('.chore-get-menu').hide()
-  $('.chore-get-one-menu').hide()
-  $('.chore-update-menu').hide()
-  $('.chore-delete-menu').hide()
-  $('.chore-add-menu').hide()
-  $('.chore-clear-menu').hide()
+  $('.wine-menu').hide()
+  $('.wine-get-menu').hide()
+  $('.wine-get-one-menu').hide()
+  $('.wine-update-menu').hide()
+  $('.wine-delete-menu').hide()
+  $('.wine-add-menu').hide()
+  $('.wine-clear-menu').hide()
 
   $('.change-password-section').hide()
   $('.sign-in-section').hide()
   $('.sign-up-section').hide()
-  $('.delete-chore-section').hide()
-  $('.update-chore-section').hide()
-  $('.add-chore-section').hide()
-  $('.get-one-chore-section').hide()
-  $('#sign-in').trigger('reset')
-  $('#sign-up').trigger('reset')
-  $('#change-password').trigger('reset')
-  $('#chore-content').empty()
-  $('#one-chore-content').empty()
+  $('.delete-wine-section').hide()
+  $('.update-wine-section').hide()
+  $('.add-wine-section').hide()
+  $('.get-one-wine-section').hide()
+  // $('#sign-in-form').trigger('reset')
+  // $('#sign-up-form').trigger('reset')
+  // $('#change-password').trigger('reset')
+  $('#wine-content').empty()
+  $('#one-wine-content').empty()
   newUserFlag = false
 }
 
 const signOutFailure = (error) => {
-  console.error('sign out failure. Error is: ', error)
+  console.error('signOutFailure: ', error)
 }
 
 const changePasswordSuccess = () => {
-  $('.change-password-success-message').html('Password successfully changed')
-  $('.change-password-success-message').show()
-  // This clears out the bootstrap alert box after a few seconds:
-  // Source: http://stackoverflow.com/questions/23101966/bootstrap-alert-auto-close
-  setTimeout(function () {
-    $('.change-password-success-message').alert('close'); $('.change-password-section').hide(); $('#change-password').trigger('reset')
-  }, 2000)
+
+  let msg = $('<h4>Password successfully changed</h4>');
+  Materialize.toast(msg, 3000, 'rounded green')
+  $('#change-password-form').trigger('reset')
+  $('.change-password-section').hide()
 }
 
 const changePasswordFailure = (error) => {
-  console.error('changePasswordFailure. Error: ', error)
-  $('.chg-passw-error-alert').html('Either your current password is incorrect or your new passwords don\'t match.')
-  $('.chg-passw-error-alert').show()
-  // This clears out the bootstrap alert box after a few seconds:
-  // Source: http://stackoverflow.com/questions/23101966/bootstrap-alert-auto-close
-  setTimeout(function () {
-    $('.chg-passw-error-alert').alert('close'); $('.change-password-section').hide(); $('#change-password').trigger('reset')
-  }, 3000)
+  console.error(error)
+  let errorMessage = $('<h4>Password Reset Failure</h4>');
+  Materialize.toast(errorMessage, 2000, 'rounded red')
+  $('#change-password-form').trigger('reset')
+  helpers.setFocusToTextBox('old-password')
 }
 
 module.exports = {

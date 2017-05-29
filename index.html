@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>My Wine Cellar</title>
+      <title>novinophobia</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <!-- linking google fonts -->
       <!-- <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Roboto" rel="stylesheet"> -->
@@ -21,102 +21,120 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
 
-<body>
 
-  <nav role="navigation">
+<body>
+ <!-- NAV SECTION -->
+  <nav class="deep-purple darken-1" role="navigation">
     <div class="nav-wrapper container">
-      <a href="#!" class="brand-logo">Logo</a>
+      <a href="#!" class="brand-logo brand-logo center">NOVINOPHOBIA</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+
       <ul class="right hide-on-med-and-down">
         <li class="sign-up-menu"><a href="#">Sign Up</a></li>
         <li class="sign-in-menu"><a href="#">Sign In</a></li>
+        <li class="sign-out-menu"><a href="#">Sign Out</a></li>
+        <li class="change-password-menu"><a href="#">Change Password</a></li>
+
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <li class="sign-up-menu"><a href="#">Sign Up</a></li>
         <li class="sign-in-menu"><a href="#">Sign In</a></li>
+        <li class="sign-out-menu"><a href="#">Sign Out</a></li>
+          <li class="change-password-menu"><a href="#">Change Password</a></li>
       </ul>
     </div>
   </nav>
 
+ <!-- SIGN UP SECTION -->
+  <div class="row container sign-up-section">
+     <form id = "sign-up-form" class="col s12">
+       <div class="row">
+         <div class="input-field col s6">
+           <input name="credentials[email]" id="sign-up-form-email" type="text" class="validate">
+           <label for="email"  data-error="incorrect email" data-success="correct">Email</label>
+         </div>
+       </div>
+
+       <div class="row">
+           <div class="input-field col s6">
+           <input type="password" name="credentials[password]" id="sign-up-form-password" class="validate">
+           <label for="last_name">Password</label>
+         </div>
+       </div>
+
+       <div class="row">
+         <div class="input-field col s6">
+           <input type="password" name="credentials[password_confirmation]" id="sign-up-form-password-confirm" class="validate">
+           <label for="last_name">Confirm Password</label>
+         </div>
+       </div>
+       <button type="submit" name="submit" class="waves-effect waves-light btn">
+     Sign Up
+   </button>
+   <button type="reset" class="btn btn-secondary">Reset</button>
+   <div class="auth-message" id="sign-up-message">&nbsp;</div>
+     </form>
+   </div>   <!-- End of Sign Up Form -->
 
 
-    <!-- <section class="container global-alert">
-      <div id="global-alert-danger" class="alert alert-danger alert-dismissibl" role="alert">
-        <strong>Error!</strong><span id="alert-danger-message"></span>
+  <!-- SIGN IN SECTION -->
+  <div class="row container sign-in-section">
+    <form id = "sign-in-form" class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input name="credentials[email]" id="sign-in-form-email" type="text" class="validate" >
+          <label for="email">Email</label>
+        </div>
       </div>
-      <div id="global-alert-success" class="alert alert-success alert-dismissible" role="alert">
-        <strong>Success!</strong><span id="alert-success-message"></span>
+
+      <div class="row">
+          <div class="input-field col s6">
+          <input type="password" name="credentials[password]" id="sign-in-form-password"  class="validate">
+          <label for="last_name">Password</label>
+        </div>
       </div>
-    </section> -->
+
+      <button type="submit" name="submit" class="waves-effect waves-light btn">Sign In</button>
+      <button type="reset" class="btn btn-secondary">Reset</button>
+    </form>
+    <div class="auth-message" id="sign-in-message">&nbsp;</div>
+  </div>   <!-- End of Sign In Form -->
 
 
-        <div class="row container sign-up-section">
-           <form id = "sign-up" class="col s12">
-             <div class="row">
-               <div class="input-field col s6">
-                 <input name="credentials[email]" id="sign-up-email" type="text" class="validate">
-                 <label for="email">Email</label>
-               </div>
-             </div>
+   <!-- CHANGE PASSWORD SECTION -->
+   <div class="row container change-password-section">
+     <form id = "change-password-form" class="col s12">
 
-             <div class="row">
-                 <div class="input-field col s6">
-                 <input type="password" name="credentials[password]" id="sign-up-password" class="validate">
-                 <label for="last_name">Password</label>
-               </div>
-             </div>
+       <div class="row">
+           <div class="input-field col s6">
+           <input type="password" name="passwords[old]" id="old-password">
+           <label for="last_name">Old Password</label>
+         </div>
+       </div>
 
-             <div class="row">
-               <div class="input-field col s6">
-                 <input type="password" name="credentials[password_confirmation]" id="sign-up-password-confirm" class="validate">
-                 <label for="last_name">Confirm Password</label>
-               </div>
-             </div>
-             <button type="submit" name="submit" class="waves-effect waves-light btn">
-           Sign Up
-         </button>
-         <button type="reset" class="btn btn-secondary">Cancel</button>
-           </form>
-         </div>   <!-- End of Sign Up Form -->
+       <div class="row">
+           <div class="input-field col s6">
+           <input type="password" name="passwords[new]" id="new-password">
+           <label for="last_name">New Password</label>
+         </div>
+       </div>
 
+       <button type="submit" name="submit" class="waves-effect waves-light btn">Change Password</button>
+       <button type="reset" class="btn btn-secondary">Reset</button>
+     </form>
 
-         <div class="row container sign-in-section">
-            <form id = "sign-in" class="col s12">
-              <div class="row">
-                <div class="input-field col s6">
-                  <input name="credentials[email]" id="sign-in-email" type="text" class="validate">
-                  <label for="email">Email</label>
-                </div>
-              </div>
+   </div>   <!-- End of  Change Password Form -->
 
-              <div class="row">
-                  <div class="input-field col s6">
-                  <input type="password" name="credentials[password]" id="sign-in-password" class="validate">
-                  <label for="last_name">Password</label>
-                </div>
-              </div>
+  <!-- MISC SECTION -->
+  <blockquote class="center-align">
+    <p >"Wine improves with age. The older I get, the better I like it."</p>
+    <footer>Anonymous"</footer>
+  </blockquote>
 
-              <button type="submit" name="submit" class="waves-effect waves-light btn">
-            Sign In
-          </button>
-          <button type="reset" class="btn btn-secondary">Cancel</button>
-            </form>
-          </div>   <!-- End of Sign In Form -->
+  <div class = "video-container responsive-video">
+   <iframe width="400" height="680" src="https://www.youtube.com/embed/zFhO6v8VaLw?autoplay=1" ></iframe>
+  </div>
 
-
-<!--
-      <section class="container account-change">
-        <form id="change-password">
-          <fieldset>
-            <legend>Change password</legend>
-            <input type="password" name="passwords[old]" id="old-password" placeholder="Old Password" required>
-            <input type="password" name="passwords[new]" id="new-password" placeholder="New Password" required>
-            <button type="submit" class="btn btn-primary">Change password</button>
-            <button type="reset" class="btn btn-secondary">Cancel</button>
-          </fieldset>
-        </form>
-      </section>
- -->
 
  <!-- WINE SECTION -->
       <!-- <div class="row">
@@ -157,6 +175,29 @@
             </div>
           </div>
         </div> -->
+
+        <!-- <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2017 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer> -->
 
     </body>
 </html>
