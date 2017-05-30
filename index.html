@@ -23,8 +23,10 @@
 
 
 <body>
+  <header>
+
  <!-- NAV SECTION -->
-  <nav class="deep-purple darken-1" role="navigation">
+  <nav class="menu-bar" role="navigation">
     <div class="nav-wrapper container">
       <a href="#" class="brand-logo brand-logo center">NOVINOPHOBIA</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
@@ -44,7 +46,9 @@
       </ul>
     </div>
   </nav>
+ </header>
 
+<main role="main">
  <!-- SIGN UP SECTION -->
   <div class="row container sign-up-section">
      <form id = "sign-up-form" class="col s12">
@@ -131,10 +135,17 @@
     <footer>Anonymous"</footer>
   </blockquote>
 
-  <div class = "video-container">
-   <iframe width="853" height="480" src="https://www.youtube.com/embed/zFhO6v8VaLw?autoplay=1" frameborder="0" allowfullscreen></iframe>
-  </div>
+  <!-- <div class="panel">
+      <div class="video-container">
+           <iframe  src="//www.youtube.com/embed/zFhO6v8VaLw" frameborder="0" allowfullscreen></iframe>
+         </div>
+  </div> -->
 
+<div class="panel">
+  <video loop="1"  autoplay class="responsive-video">
+    <source src="video/redWineSlowPour.mp4" type="video/mp4">
+  </video>
+</div>
 
  <!-- WINE SECTION -->
       <!-- <div class="row">
@@ -175,29 +186,17 @@
             </div>
           </div>
         </div> -->
+</main>   <!-- end of main -->
 
-        <!-- <footer class="page-footer">
+        <footer class="page-footer">
           <div class="container">
             <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
-                </ul>
+              <div class="center">
+                <p class="grey-text text-lighten-4">Thanks to everyone at WDI-LM01 who inspired me to create this final project. Cheers <span class="glyphicon glyphicon-glass"></span></p>
               </div>
             </div>
           </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2017 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
-          </div>
-        </footer> -->
+        </footer>
 
     </body>
 </html>

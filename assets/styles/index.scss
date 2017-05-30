@@ -3,3 +3,27 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import 'colors';
 @import 'style';
 @import 'auth';
+
+main {
+  flex: 1 0 auto;
+}
+
+body {
+    background-color: rgb(223,226,231);
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+
+
+// The webkit was to remove a very faint line that appeared under the video
+//  https://stackoverflow.com/questions/18765264/how-do-i-remove-a-box-shadow-effect-from-an-element-when-another-element-is-hove
+.panel {
+  width: 60%;
+  margin:0 auto;
+  text-align: center;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
