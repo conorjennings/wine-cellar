@@ -2,6 +2,7 @@
 
 const store = require('../store')
 const helpers = require('./../helpers/helper-events')
+// const Materialize = require('./../js/materialize')
 
 const signUpSuccess = (data) => {
   store.user = data.user

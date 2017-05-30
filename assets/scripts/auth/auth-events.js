@@ -3,7 +3,9 @@
 const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./auth-api')
 const ui = require('./auth-ui')
+// const materializecss = require('./../js/materialize')
 const helpers = require('./../helpers/helper-events')
+
 const onSignUp = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
