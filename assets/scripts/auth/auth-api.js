@@ -40,7 +40,6 @@ const changePassword = function (data) {
   })
 }
 
-
 // Exported since used in other code like events.js
 module.exports = {
   signUp,
