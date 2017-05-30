@@ -1,5 +1,43 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import 'colors';
-@import 'style';
+@import 'vino';
 @import 'auth';
+
+// Needed for ensuring footer stays at bottom of page
+main {
+  flex: 1 0 auto;
+}
+
+// display and flex-direction is needed for ensuring footer stays at bottom of page
+body {
+  background-color: rgb(223,226,231);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+// The webkit was to remove a very faint line that appeared under the video
+//  https://stackoverflow.com/questions/18765264/how-do-i-remove-a-box-shadow-effect-from-an-element-when-another-element-is-hove
+.panel {
+  width: 60%;
+  margin:0 auto;
+  text-align: center;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.page-footer {
+    background-color: #a0bb2d;
+}
+
+// Needed to color the navigation bar:
+.menu-bar {
+  background-color: #380a2d;
+}
+
+// This removes the double vision lines in the sign up/in modal:
+.mdl-textfield__label {
+  margin-bottom: 0;
+}

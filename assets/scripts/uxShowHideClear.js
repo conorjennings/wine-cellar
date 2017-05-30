@@ -1,5 +1,4 @@
 const uxHandlers = () => {
-  console.log('inside the uxHandlers code ')
   // Show/hide/clear all authentication forms:
   $('.sign-up-section').hide()
   $('.sign-in-section').hide()
@@ -23,7 +22,6 @@ const uxHandlers = () => {
   //   console.log('clicked on sign-up-menu ... ')
   //   $('#sign-up-form').show()
   // })
-
 
   // Show/hide add item form
   // $('#add-item-jumbotron').hide()

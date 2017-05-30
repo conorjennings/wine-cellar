@@ -5,7 +5,7 @@ const helpers = require('./../helpers/helper-events')
 
 const signUpSuccess = (data) => {
   store.user = data.user
-  let msg = $('<h4>Sign Up successful. Please sign in.</h4>');
+  const msg = $('<h4>Sign Up successful. Please sign in.</h4>')
   Materialize.toast(msg, 3000, 'rounded green')
   $('#sign-up-form').trigger('reset')
   $('.sign-in-section').show()
@@ -13,12 +13,9 @@ const signUpSuccess = (data) => {
   helpers.setFocusToTextBox('sign-in-form-email')
 }
 
-const getNewUserFlag = function () {
-  return newUserFlag
-}
 const signUpFailure = (error) => {
   console.error(error)
-  let errorMessage = $('<h4>Either your password doesn\'t  match or the user id is taken</h4>');
+  const errorMessage = $('<h4>Either your password doesn\'t  match or the user id is taken</h4>')
   Materialize.toast(errorMessage, 2000, 'rounded red')
   $('#sign-up-form').trigger('reset')
   helpers.setFocusToTextBox('sign-up-form-email')
@@ -28,7 +25,6 @@ const signUpFailure = (error) => {
 const signInSuccess = (data) => {
   store.user = data.user
 
-  let msg = $('<h4>You are now signed in..</h4>');
   Materialize.toast(msg, 3000, 'rounded green')
   $('#sign-in-form').trigger('reset')
   $('.sign-in-section').hide()
@@ -45,8 +41,8 @@ const signInSuccess = (data) => {
 }
 
 const signInFailure = (error) => {
-
-  let errorMessage = $('<h4>Incorrect Email or Password</h4>');
+  console.error(error)
+  const errorMessage = $('<h4>Incorrect Email or Password</h4>')
   Materialize.toast(errorMessage, 2000, 'rounded red')
   $('#sign-in-form').trigger('reset')
   helpers.setFocusToTextBox('sign-in-form-email')
@@ -54,15 +50,12 @@ const signInFailure = (error) => {
 
 const signOutSuccess = () => {
   store.user = null // this gets rid of data stored in cache
-
-  let msg = $('<h4>You have successfully signed out..</h4>');
+  const msg = $('<h4>You have successfully signed out..</h4>')
   Materialize.toast(msg, 3000, 'rounded green')
 
   $('.sign-up-menu').show()
   $('.sign-in-menu').show()
   $('.sign-out-menu').hide()
-  // $('.video-container').reset()
-
 
   $('#sign-up-form').show()
   $('.sign-in-menu').show()
@@ -88,7 +81,6 @@ const signOutSuccess = () => {
   // $('#change-password').trigger('reset')
   $('#wine-content').empty()
   $('#one-wine-content').empty()
-  newUserFlag = false
 }
 
 const signOutFailure = (error) => {
@@ -96,7 +88,7 @@ const signOutFailure = (error) => {
 }
 
 const changePasswordSuccess = () => {
-  let msg = $('<h4>Password successfully changed</h4>');
+  const msg = $('<h4>Password successfully changed</h4>')
   Materialize.toast(msg, 3000, 'rounded green')
   $('#change-password-form').trigger('reset')
   $('.change-password-section').hide()
@@ -104,7 +96,7 @@ const changePasswordSuccess = () => {
 
 const changePasswordFailure = (error) => {
   console.error(error)
-  let errorMessage = $('<h4>Password Reset Failure</h4>');
+  const errorMessage = $('<h4>Password Reset Failure</h4>')
   Materialize.toast(errorMessage, 2000, 'rounded red')
   $('#change-password-form').trigger('reset')
   helpers.setFocusToTextBox('old-password')
@@ -118,7 +110,5 @@ module.exports = {
   signOutSuccess,
   signOutFailure,
   changePasswordSuccess,
-  changePasswordFailure,
-  getNewUserFlag
-
+  changePasswordFailure
 }

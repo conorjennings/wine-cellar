@@ -40,7 +40,10 @@ const changePassword = function (data) {
   })
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> vino
 // Exported since used in other code like events.js
 module.exports = {
   signUp,

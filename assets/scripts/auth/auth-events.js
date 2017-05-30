@@ -10,8 +10,7 @@ const onSignUp = function (event) {
   const data = getFormFields(event.target)
 
   if (data.credentials.password !== data.credentials.password_confirmation) {
-
-    let errorMessage = $('<h4>Either your password doesn\'t  match or the user id is taken</h4>');
+    const errorMessage = $('<h4>Either your password doesn\'t  match or the user id is taken</h4>')
     Materialize.toast(errorMessage, 3000, 'rounded red')
     $('#sign-up-form').trigger('reset')
     helpers.setFocusToTextBox('sign-up-form-email')
@@ -55,12 +54,7 @@ const onShowSignIn = function () {
   $('#sign-up-form-password-confirm').val('')
 }
 
-const onHideSignIn = function () {
-  $('.sign-in-section').hide()
-}
-
 const onShowSignUp = function () {
-  console.log ('got to onShowSignUp')
   $('.sign-up-section').show()
   $('.sign-in-section').hide()
   $('#sign-up-form-email').val('')
@@ -72,10 +66,9 @@ const onShowChangePassword = function () {
   $('.change-password-section').show()
 }
 
-  const onHideChangePassword = function () {
+const onHideChangePassword = function () {
   $('.change-password-section').hide()
 }
-
 
 const authHandlers = () => {
   $('.change-password-menu').on('click', onShowChangePassword)
