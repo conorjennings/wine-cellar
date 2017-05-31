@@ -84,7 +84,8 @@ module.exports = {
         }, {
           test: /\.mp4$/,
           loader: 'url?limit=10000&mimetype=video/mp4'
-        }
+        },
+        { test: /\.css$/, loader: 'style-loader!css-loader' }   // Just added  to test out
       ]
     },
 

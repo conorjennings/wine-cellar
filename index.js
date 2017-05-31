@@ -4,6 +4,9 @@
 // var example = require('./example');
 
 require('materialize-css/sass/materialize.scss')
+require('materialize-css/js/materialize.js')
+require('materialize-css/js/init.js')  // Need this to allow materialize-css to use the JS functionality
+
 // load manifests
 // scripts
 require('./assets/scripts/index.js')

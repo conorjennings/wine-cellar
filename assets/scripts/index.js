@@ -7,7 +7,6 @@ const uxEvents = require('./uxShowHideClear')
 // const grapes = require('../../images/grapes.jpg')
 // const html = `<img src=${grapes} />`
 const winePourVideo = require('../../video/redWineSlowPour.mp4')
-
 const html = `<video loop='1' autoplay class='responsive-video'> <source src=${winePourVideo} type='video/mp4'> </video>`
 
 $(() => {
