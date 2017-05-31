@@ -8,13 +8,23 @@ module.exports = {
     entry: {
       application: './index.js',
       specs: './spec/_all.js',
-      vendor: ['jquery', 'bootstrap-sass']
+      // vendor: ['jquery', 'bootstrap-sass']
+      vendor: ['jquery', 'materialize-css']
     },
 
     output: {
       filename: '[name].js',
       path: path.join(__dirname, '/../public'),
       publicPath: 'public/'
+    },
+
+    // the npm materialize-css package comes with it's own private copy of jquery
+     // which causes problems, so this is to make sure 'our' jquery is used
+    resolve: {
+      alias: {
+        'jquery': path.resolve(__dirname, '../node_modules/jquery/dist/jquery.js'), // The ../node_modules seems hacky JAF
+        handlebars: 'handlebars/dist/handlebars.js' // CJ I added handlebars into this alias as getting error below with 2 resolve names
+      }
     },
 
     plugins: [
@@ -69,11 +79,11 @@ module.exports = {
       ]
     },
 
-    resolve: {
-      alias: {
-        handlebars: 'handlebars/dist/handlebars.js'
-      }
-    },
+    // resolve: {
+    //   alias: {
+    //     handlebars: 'handlebars/dist/handlebars.js'
+    //   }
+    // },
     stats: {
       colors: true,
       modules: true,

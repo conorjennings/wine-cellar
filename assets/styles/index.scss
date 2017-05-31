@@ -1,8 +1,9 @@
-$icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
-@import '~bootstrap-sass/assets/stylesheets/bootstrap';
+// $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
+// @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 @import 'colors';
 @import 'vino';
 @import 'auth';
+@import 'material-design-icons';
 
 // Needed for ensuring footer stays at bottom of page
 main {

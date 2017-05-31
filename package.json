@@ -37,6 +37,7 @@
     "handlebars-loader": "^1.4.0",
     "html-loader": "^0.4.4",
     "load-grunt-config": "^0.19.2",
+    "materialize-css": "^0.97.8",
     "node-libs-browser": "^1.0.0",
     "node-sass": "^3.10.1",
     "sass-loader": "^4.0.2",

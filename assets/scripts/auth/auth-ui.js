@@ -16,6 +16,7 @@ const signUpSuccess = (data) => {
 const signUpFailure = (error) => {
   console.error(error)
   const errorMessage = $('<h4>Either your password doesn\'t  match or the user id is taken</h4>')
+  // console.log('message is ', errorMessage)
   Materialize.toast(errorMessage, 2000, 'rounded red')
   $('#sign-up-form').trigger('reset')
   helpers.setFocusToTextBox('sign-up-form-email')
@@ -24,7 +25,7 @@ const signUpFailure = (error) => {
 // Important to use tokens (change each time you sign in) over using IDs
 const signInSuccess = (data) => {
   store.user = data.user
-
+  const msg = $('<h4>You have successfully signed in..</h4>')
   Materialize.toast(msg, 3000, 'rounded green')
   $('#sign-in-form').trigger('reset')
   $('.sign-in-section').hide()
