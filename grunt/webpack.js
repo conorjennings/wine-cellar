@@ -77,6 +77,13 @@ module.exports = {
               path.join(__dirname, '/../assets/scripts/templates/helpers')
             ]
           }
+        },
+        {
+          test: /\.html$/,
+          loader: 'html-loader?attrs[]=video:src'
+        }, {
+          test: /\.mp4$/,
+          loader: 'url?limit=10000&mimetype=video/mp4'
         }
       ]
     },
