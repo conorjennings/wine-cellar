@@ -4,11 +4,15 @@ const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const authEvents = require('./auth/auth-events.js')
 const uxEvents = require('./uxShowHideClear')
+const grapes = require('../../images/grapes.jpg')
+
+const html = `<img src=${grapes} />`
 
 $(() => {
   setAPIOrigin(location, config)
   authEvents.authHandlers()
   uxEvents.uxHandlers()
+  $('#grape-picture').append(html)
 })
 
 // use require with a reference to bundle the file and use it in this file
