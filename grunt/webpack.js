@@ -23,7 +23,9 @@ module.exports = {
     resolve: {
       alias: {
         'jquery': path.resolve(__dirname, '../node_modules/jquery/dist/jquery.js'), // The ../node_modules seems hacky JAF
-        handlebars: 'handlebars/dist/handlebars.js' // CJ I added handlebars into this alias as getting error below with 2 resolve names
+        handlebars: 'handlebars/dist/handlebars.js', // CJ I added handlebars into this alias as getting error below with 2 resolve names
+        materializecss: 'materialize-css/dist/css/materialize.css',
+        materialize: 'materialize-css/dist/js/materialize.js'
       }
     },
 
