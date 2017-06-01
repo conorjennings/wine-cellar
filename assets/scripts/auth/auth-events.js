@@ -7,6 +7,7 @@ const helpers = require('./../helpers/helper-events')
 
 const onSignUp = function (event) {
   event.preventDefault()
+  $('.progress').show()
   const data = getFormFields(event.target)
 
   if (data.credentials.password !== data.credentials.password_confirmation) {
@@ -23,6 +24,7 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
+  $('.progress').show()
   const data = getFormFields(this)
   api.signIn(data)
   .done(ui.signInSuccess)
@@ -38,6 +40,7 @@ const onSignOut = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
+  $('.progress').show()
   const data = getFormFields(event.target)
   api.changePassword(data)
   .done(ui.changePasswordSuccess)

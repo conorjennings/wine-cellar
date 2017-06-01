@@ -15,7 +15,17 @@ $(() => {
   uxEvents.uxHandlers()
   // $('#grape-picture').append(html)
   $('#wine-video').append(html)
-})
+
+  // I added this block of code from this solution to ensure the menu closed when I
+  // clicked on a menu inside hamburger menu
+  // https://jsfiddle.net/Tirth_Patel/3maohcLk/
+  $('.button-collapse').sideNav({
+    menuWidth: 200, // Default is 240
+    edge: 'left', // Choose the horizontal origin
+    closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+    draggable: true
+  })
+}) // end
 
 // use require with a reference to bundle the file and use it in this file
 // const example = require('./example')

@@ -1,9 +1,9 @@
 // $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 // @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-@import 'colors';
+// @import 'colors';
 @import 'vino';
-@import 'auth';
-@import 'material-design-icons';
+// @import 'auth';
+// @import 'material-design-icons';
 
 // Needed for ensuring footer stays at bottom of page
 main {
@@ -12,7 +12,8 @@ main {
 
 // display and flex-direction is needed for ensuring footer stays at bottom of page
 body {
-  background-color: rgb(223,226,231);
+  // background-color: '#f1eff1';
+   background-color: rgb(237,242,241);
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -21,7 +22,7 @@ body {
 // The webkit was to remove a very faint line that appeared under the video
 //  https://stackoverflow.com/questions/18765264/how-do-i-remove-a-box-shadow-effect-from-an-element-when-another-element-is-hove
 .panel {
-  width: 60%;
+  width: 40%;
   margin:0 auto;
   text-align: center;
   -webkit-box-shadow: none;
@@ -42,3 +43,19 @@ body {
 .mdl-textfield__label {
   margin-bottom: 0;
 }
+
+blockquote{
+  border-left: 5px solid rgb(237,242,241); /* Change default color of blockquote to match page background */
+}
+//
+//
+// #toast-container {
+//   top: fixed !important;
+//   // right: auto !important;
+// }
+//
+// #toast-container {
+//   top: auto !important;
+//   right: auto !important;
+//   bottom: 55%;
+// }

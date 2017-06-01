@@ -1,7 +1,7 @@
 'use strict'
 
-const setFocusToTextBox = function(IdName){
-    document.getElementById(IdName).focus()
+const setFocusToTextBox = function (IdName) {
+  document.getElementById(IdName).focus()
 }
 
 module.exports = {

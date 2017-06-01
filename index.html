@@ -19,7 +19,7 @@
  <!-- NAV SECTION -->
   <nav class="menu-bar" role="navigation">
     <div class="nav-wrapper container">
-      <a href="#" class="brand-logo brand-logo center">NOVINOPHOBIA</a>
+      <a href="#" class="brand-logo brand-logo center hide-on-small-only">NOVINOPHOBIA</a>
       <a href="#" data-activates="mobile-demo" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
 
       <ul class="right hide-on-med-and-down">
@@ -39,7 +39,8 @@
   </nav>
  </header>
 
-<main role="main">
+<main role="main" class="flow-text">
+
  <!-- SIGN UP SECTION -->
   <div class="row container sign-up-section">
      <form id = "sign-up-form" class="col s12">
@@ -63,14 +64,17 @@
            <label for="last_name">Confirm Password</label>
          </div>
        </div>
-       <button type="submit" name="submit" class="waves-effect waves-light btn">
-     Sign Up
-   </button>
-   <button type="reset" class="btn btn-secondary">Reset</button>
-   <div class="auth-message" id="sign-up-message">&nbsp;</div>
+
+       <button type="submit" name="submit" class="waves-effect waves-light btn"> Sign Up </button>
+       <button type="reset" class="btn btn-secondary">Reset</button>
+
+       <div class="progress">
+           <div class="indeterminate"></div>
+       </div>
+
+       <div class="auth-message" id="sign-up-message">&nbsp;</div>
      </form>
    </div>   <!-- End of Sign Up Form -->
-
 
   <!-- SIGN IN SECTION -->
   <div class="row container sign-in-section">
@@ -122,12 +126,11 @@
 
   <!-- MISC SECTION -->
   <blockquote class="center-align">
-    <p >"Wine improves with age. The older I get, the better I like it."</p>
-    <footer>Anonymous"</footer>
+    <p>"Wine improves with age. The older I get, the better I like it."</p>
+    <footer>Anonymous</footer>
   </blockquote>
 
 <div id="wine-video" class="panel"> </div>
-
 <!-- <div id ="grape-picture" class="panel"> </div>
 
  <!-- WINE SECTION -->
