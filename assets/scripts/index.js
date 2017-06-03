@@ -4,6 +4,7 @@ const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const authEvents = require('./auth/auth-events.js')
 const uxEvents = require('./uxShowHideClear')
+const vinoEvents = require('./vino/wine-events.js')
 // const grapes = require('../../images/grapes.jpg')
 // const html = `<img src=${grapes} />`
 const winePourVideo = require('../../video/redWineSlowPour.mp4')
@@ -13,6 +14,8 @@ $(() => {
   setAPIOrigin(location, config)
   authEvents.authHandlers()
   uxEvents.uxHandlers()
+  vinoEvents.wineHandlers()
+
   // $('#grape-picture').append(html)
   $('#wine-video').append(html)
 

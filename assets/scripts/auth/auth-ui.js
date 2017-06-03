@@ -30,6 +30,8 @@ const signInSuccess = (data) => {
   Materialize.toast(msg, 2000, 'rounded green')
   $('#sign-in-form').trigger('reset')
   $('.sign-in-section').hide()
+  $('.parallax-section').show()
+  $('#wine-video').hide()
 
   $('.video-container').hide()
   $('.sign-out-menu').show()
@@ -41,6 +43,7 @@ const signInSuccess = (data) => {
   $('.chore-menu').show()
   $('.home-menu').show()
   $('.progress').hide()
+
 }
 
 const signInFailure = (error) => {
@@ -78,7 +81,7 @@ const signOutSuccess = () => {
   $('.sign-up-section').hide()
   $('.delete-wine-section').hide()
   $('.update-wine-section').hide()
-  $('.add-wine-section').hide()
+  $('.create-wine-section').hide()
   $('.get-one-wine-section').hide()
   // $('#sign-in-form').trigger('reset')
   // $('#sign-up-form').trigger('reset')

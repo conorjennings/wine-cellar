@@ -6,6 +6,7 @@ const uxHandlers = () => {
   $('.change-password-menu').hide()
   $('.sign-out-menu').hide()
   $('.progress').hide()
+  $('.parallax-section').hide()
 
   // $('#change-pwd-option').on('click', function () {
   //   $('#change-password-jumbotron').show()

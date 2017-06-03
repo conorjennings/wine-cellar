@@ -6,6 +6,7 @@
 
       <!-- Do not add `link` tags unless you know what you are doing -->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
       <!-- Do not add `script` tags unless you know what you are doing -->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
@@ -39,27 +40,29 @@
   </nav>
  </header>
 
+
 <main role="main" class="flow-text">
 
  <!-- SIGN UP SECTION -->
-  <div class="row container sign-up-section">
+  <div class="row container section sign-up-section">
      <form id = "sign-up-form" class="col s12">
        <div class="row">
-         <div class="input-field col s6">
+         <div class="input-field col s4">
+           <!-- <i class="material-icons prefix">account_circle</i> -->
            <input name="credentials[email]" id="sign-up-form-email" type="text" class="validate">
            <label for="email"  data-error="incorrect email" data-success="correct">Email</label>
          </div>
        </div>
 
        <div class="row">
-           <div class="input-field col s6">
+           <div class="input-field col s4">
            <input type="password" name="credentials[password]" id="sign-up-form-password" class="validate">
            <label for="last_name">Password</label>
          </div>
        </div>
 
        <div class="row">
-         <div class="input-field col s6">
+         <div class="input-field col s4">
            <input type="password" name="credentials[password_confirmation]" id="sign-up-form-password-confirm" class="validate">
            <label for="last_name">Confirm Password</label>
          </div>
@@ -77,17 +80,17 @@
    </div>   <!-- End of Sign Up Form -->
 
   <!-- SIGN IN SECTION -->
-  <div class="row container sign-in-section">
+  <div class="row container section sign-in-section">
     <form id = "sign-in-form" class="col s12">
       <div class="row">
-        <div class="input-field col s6">
+        <div class="input-field col s4">
           <input name="credentials[email]" id="sign-in-form-email" type="text" class="validate" >
           <label for="email">Email</label>
         </div>
       </div>
 
       <div class="row">
-          <div class="input-field col s6">
+          <div class="input-field col s4">
           <input type="password" name="credentials[password]" id="sign-in-form-password"  class="validate">
           <label for="last_name">Password</label>
         </div>
@@ -101,18 +104,18 @@
 
 
    <!-- CHANGE PASSWORD SECTION -->
-   <div class="row container change-password-section">
+   <div class="row container section change-password-section">
      <form id = "change-password-form" class="col s12">
 
        <div class="row">
-           <div class="input-field col s6">
+           <div class="input-field col s4">
            <input type="password" name="passwords[old]" id="old-password">
            <label for="last_name">Old Password</label>
          </div>
        </div>
 
        <div class="row">
-           <div class="input-field col s6">
+           <div class="input-field col s4">
            <input type="password" name="passwords[new]" id="new-password">
            <label for="last_name">New Password</label>
          </div>
@@ -131,83 +134,43 @@
   </blockquote>
 
 <div id="wine-video" class="panel"> </div>
-<!-- <div id ="grape-picture" class="panel"> </div>
+<!-- <button id ="read-wines"> get wines </button>
+<div class="list-group" id="wine-collection"></div> -->
 
- <!-- WINE SECTION -->
-      <!-- <div class="row">
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <img src="http://cdn.ct-static.com/labels/578584.jpg" height="250" width="250" class="img-fluid" alt="mazzocco">
-            <div class="mazzocco wines">
-              <h3>Mazzocco</h3>
-                <div class="rating">Rating: 8 </div>
-                    <div class="tasting-notes"> Delicious Wine. Would buy again </div>
-              <p><a href="#" class="btn btn-primary" role="button">Details</a> <a href="#" class="btn btn-default" role="button">Cancel</a></p>
-            </div>
-          </div>
-        </div>
+<div class="parallax-section">
+  <div class="parallax-container">
+    <div class="parallax"><img src="images/bottle-red-wine-3.jpg" alt="glass-red-wine" class="responsive-img"></div>
 
-        <div class="col-sm-6 col-md-4">
-          <div class="thumbnail">
-            <img src="https://s3.amazonaws.com/thewinespies-production/uploads/product/image/1960-6da9084d1318bab2addbe9338c4249ae63eb1769/tall_product_photo.jpg" height="250" width="250" class="img-fluid" alt="Petroni">
-            <div class="mazzocco wines">
-              <h3>Petroni</h3>
-                <div class="rating">Rating: 6 </div>
-                    <div class="tasting-notes"> Delicious Wine. Would buy again </div>
-              <p><a href="#" class="btn btn-primary" role="button">Details</a> <a href="#" class="btn btn-default" role="button">Cancel</a></p>
-            </div>
-          </div>
-        </div>
+  </div>
 
-        <div class="row">
-          <div class="col-sm-6 col-md-4">
-            <div class="thumbnail">
-              <img src="images/genericWine.png" height="250" width="250" class="img-fluid" alt="generic">
-              <div class="generic wines">
-                <h3>Generic Wine</h3>
-                  <div class="rating">Rating: 4 </div>
-                      <div class="tasting-notes"> TBD </div>
-                <p><a href="#" class="btn btn-primary" role="button">Details</a> <a href="#" class="btn btn-default" role="button">Cancel</a></p>
-              </div>
-            </div>
-          </div>
-        </div> -->
+  <div class="section white">
+    <div class="row container">
+      <h2 class="header">Wine Collection</h2>
+      <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
+      <button id ="read-wines"> get wines </button>
+      <div class="list-group" id="wine-collection"></div>
+    </div>
+  </div>
+
+  <div class="parallax-container">
+    <div class="parallax"><img src="images/glass-of-white-wine.jpg" alt="glass white wine" class="responsive-img"></div>
+  </div>
+</div>
 
 
-        <!-- <footer class="page-footer">
-          <div class="container">
-            <div class="row">
-              <div class="col l6 s12">
-                <h5 class="white-text">Footer Content</h5>
-                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-              </div>
-              <div class="col l4 offset-l2 s12">
-                <h5 class="white-text">Links</h5>
-                <ul>
-                  <li><a class="grey-text text-lighten-3" href="#!">Home</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="footer-copyright">
-            <div class="container">
-            © 2017 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
-          </div>
-        </footer> -->
+</main>
 
-</main>   <!-- end of main -->
 
-        <footer class="page-footer">
-          <div class="container">
-            <div class="row">
-              <div class="center">
-                <p class="grey-text text-lighten-4">Cheers <span class="glyphicon glyphicon-glass"></span></p>
-              </div>
-            </div>
-          </div>
-        </footer>
-<!-- Thanks to everyone at WDI-LM01 who inspired me to create this final project.  -->
-    </body>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="center">
+        <p class="grey-text text-lighten-4">Cheers <span class="glyphicon glyphicon-glass"></span></p>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- Thanks to everyone at WDI-LM01 who inspired me along the way to create this final project. Cheers!  -->
+</body>
 </html>
