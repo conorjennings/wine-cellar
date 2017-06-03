@@ -2,7 +2,7 @@
 // @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 // @import 'colors';
 @import 'vino';
-// @import 'auth';
+@import 'style';
 @import 'colors';
 
 // Needed for ensuring footer stays at bottom of page
@@ -37,9 +37,13 @@ body {
 // .card {
 //   max-width: 400px;
 //   height: 400px;
-//   background: white;
+//   background:
 //   margin: 50px auto;
 //   box-shadow: 0 3px 5px rgba(0,0,0,0.1);
 //   position: relative;
 //   overflow: hidden;
 // }
+
+// This code is used to preload the parallax pictures into cache before page loads:
+#preload-red-wine-jpg { background: url('../../images/bottle-red-wine-3.jpg') no-repeat -9999px -9999px; }
+#preload-white-wine-jpg { background: url('../../images/glass-of-white-wine.jpg') no-repeat -9999px -9999px; }

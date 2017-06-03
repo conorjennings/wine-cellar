@@ -3,6 +3,40 @@
 const store = require('../store')
 const helpers = require('./../helpers/helper-events')
 
+const wineQuotes = [
+  `<blockquote class="center-align blockquote-wine">
+    <p>"I cook with wine, sometimes I even add it to the food."</p>
+    <footer>"W.C. Fields"</footer>
+  </blockquote>`,
+  `<blockquote class="center-align blockquote-wine">
+    <p>"Wine makes daily living easier, less hurried, with fewer tensions and more tolerance"</p>
+    <footer>Benjamin Franklin</footer>
+  </blockquote>`,
+  `<blockquote class="center-align blockquote-wine">
+    <p>"I don't go by the ratings. I buy wine that tastes good. Statistically, anybody's ability to predict what will be a good wine a decade from now is limited"</p>
+    <footer>Richard Thaler</footer>
+  </blockquote>`,
+  `<blockquote class="center-align blockquote-wine">
+    <p>"Nothing makes the future look so rosy as to contemplate it through a glass of Chambertin"</p>
+    <footer>Napoleon Bonaparte</footer>
+  </blockquote>`,
+  `<blockquote class="center-align blockquote-wine">
+    <p>"What wine goes with Captain Crunch?"</p>
+    <footer>George Carlin</footer>
+  </blockquote>`,
+  `<blockquote class="center-align blockquote-wine">
+    <p>"I can certainly see that you know your wine. Most of the guests who stay here wouldn’t know the difference between Bordeaux and Claret."</p>
+    <footer>Basil Fawlty, Fawlty Towers</footer>
+  </blockquote>`
+]
+
+const onLoadRandomWineQuote = function (wineQuotes) {
+  const options = wineQuotes.length
+  const random = Math.floor(Math.random() * (options - 0 + 1)) + 0
+  const quote = wineQuotes[random]
+  return quote
+}
+
 const signUpSuccess = (data) => {
   store.user = data.user
   const msg = $('<h6>Sign Up successful. Please sign in.</h6>')
@@ -32,18 +66,18 @@ const signInSuccess = (data) => {
   $('.sign-in-section').hide()
   $('.parallax-section').show()
   $('#wine-video').hide()
-
+  $('.display-current-user').text('Signed in as ' + data.user.email)
   $('.video-container').hide()
   $('.sign-out-menu').show()
   $('.sign-in-menu').hide()
   $('.sign-up-menu').hide()
   $('.change-password-menu').show()
   $('.sign-up-section').hide()
-
+  const randomWineQuote = onLoadRandomWineQuote(wineQuotes)
+  $('.random-wine-quote').append(randomWineQuote)
   $('.chore-menu').show()
   $('.home-menu').show()
   $('.progress').hide()
-
 }
 
 const signInFailure = (error) => {
@@ -63,6 +97,12 @@ const signOutSuccess = () => {
   $('.sign-up-menu').show()
   $('.sign-in-menu').show()
   $('.sign-out-menu').hide()
+  $('.display-current-user').text('')
+  $('.random-wine-quote').text('')
+  $('#wine-video').show()
+  $('.sign-in-section').show()
+  $('.parallax-section').hide()
+  $('#wine-collection').text('')
 
   $('#sign-up-form').show()
   $('.sign-in-menu').show()

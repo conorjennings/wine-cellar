@@ -28,13 +28,14 @@
         <li class="sign-in-menu"><a href="#">Sign In</a></li>
         <li class="sign-out-menu"><a href="#">Sign Out</a></li>
         <li class="change-password-menu"><a href="#">Change Password</a></li>
+        <li class="display-current-user"></li>
 
       </ul>
       <ul class="side-nav" id="mobile-demo">
         <li class="sign-up-menu"><a href="#">Sign Up</a></li>
         <li class="sign-in-menu"><a href="#">Sign In</a></li>
         <li class="sign-out-menu"><a href="#">Sign Out</a></li>
-          <li class="change-password-menu"><a href="#">Change Password</a></li>
+        <li class="change-password-menu"><a href="#">Change Password</a></li>
       </ul>
     </div>
   </nav>
@@ -139,27 +140,24 @@
 
 <div class="parallax-section">
   <div class="parallax-container">
-    <div class="parallax"><img src="images/bottle-red-wine-3.jpg" alt="glass-red-wine" class="responsive-img"></div>
+    <div class="parallax" id="preload-red-wine-jpg"><img src="images/bottle-red-wine-3.jpg" alt="glass-red-wine" class="responsive-img"></div>
 
   </div>
 
   <div class="section white">
     <div class="row container">
       <h2 class="header">Wine Collection</h2>
-      <p class="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
-      <button id ="read-wines"> get wines </button>
+      <p class="grey-text text-darken-3 lighten-3 random-wine-quote"></p>
+      <button id ="read-wines"> Wine Detail </button>
       <div class="list-group" id="wine-collection"></div>
     </div>
   </div>
 
   <div class="parallax-container">
-    <div class="parallax"><img src="images/glass-of-white-wine.jpg" alt="glass white wine" class="responsive-img"></div>
+    <div class="parallax" id="preload-white-wine-jpg"><img src="images/glass-of-white-wine.jpg" alt="glass white wine" class="responsive-img"></div>
   </div>
 </div>
-
-
 </main>
-
 
 
 <footer class="page-footer">
