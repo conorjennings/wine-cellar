@@ -7,6 +7,24 @@ const uxHandlers = () => {
   $('.sign-out-menu').hide()
   $('.progress').hide()
   $('.parallax-section').hide()
+  $('#create-wine-form').hide()
+
+  $('#closeResetForm').on('click', function () {
+    console.log('>>>> Inside uxShowHideClear')
+    $('#create-wine-form').hide()
+    $('#wine_name').val('')
+    $('grape_name').val('')
+    $('grape_year').val('')
+    $('region').val('')
+    $('country').val('')
+    $('quantity').val(0)
+    $('notes').val('')
+    $('url_picture').val('')
+    $('rating').val(0)
+    $('.parallax-section').show()
+
+  // $('#add-item-response').text('')
+  })
 
   // $('#change-pwd-option').on('click', function () {
   //   $('#change-password-jumbotron').show()

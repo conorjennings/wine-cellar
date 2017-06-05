@@ -15,7 +15,6 @@ $(() => {
   authEvents.authHandlers()
   uxEvents.uxHandlers()
   vinoEvents.wineHandlers()
-
   // $('#grape-picture').append(html)
   $('#wine-video').append(html)
 
@@ -27,6 +26,51 @@ $(() => {
     edge: 'left', // Choose the horizontal origin
     closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
     draggable: true
+  })
+
+// Needed for using drop down menus:
+// Source: http://materializecss.com/forms.html#select-initialization
+  $(document).ready(function () {
+    $('select').material_select()
+  })
+
+  // This is needed for auto complete in forms. Source: http://materializecss.com/forms.html
+  $('input.autocomplete').autocomplete({
+    data: {
+      'Mazzocco': null,
+      'Joel Gott': null,
+      'Kuleto': null,
+      'Elyse': null,
+      'Seghesio': null,
+      'Cakebread Cellars': null,
+      'Sean Minor': null,
+      'Petroni': null,
+      'La Crema': null,
+      'Zinfandel': null,
+      'Pinot Noir': null,
+      'Cabarnet Sauvignon': null,
+      'Chardonnay': null,
+      'Merlot': null,
+      'Malbec': null,
+      'Sauvignon Blanc': null,
+      'Shiraz': null,
+      'Petite Sirah': null,
+      'Pinot Gris': null,
+      'Sangiovese': null,
+      'Napa': null,
+      'Sonoma': null,
+      'USA': null,
+      'France': null,
+      'Italy': null,
+      'Australia': null,
+      'Chile': null,
+      'Spain': null
+    },
+    limit: 20, // The max amount of results that can be shown at once. Default: Infinity.
+    onAutocomplete: function (val) {
+      // Callback function when value is autcompleted.
+    },
+    minLength: 1 // The minimum length of the input for the autocomplete to start. Default: 1.
   })
 }) // end
 

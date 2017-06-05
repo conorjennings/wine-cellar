@@ -4,25 +4,20 @@ const wineListingHandleBars = require('../templates/wine-listing.handlebars')
 
 const createWineSuccess = (data) => {
   store.item = data.item
-  // $('#add-item-response').text('Success! Add another item or click FOOD to see all items.')
+  $('#create-wine-form').hide()
+  $('#create-wine-form').trigger('reset')
+  // Materialize.updateTextFields()
+  $('.parallax-section').show()
 }
 
 const createWineFailure = (error) => {
+  console.log('createWineFailure(), error is ', error)
   console.error(error)
-  // $('#add-item-response').text('All field forms are required. Please try again.')
 }
 
 const readWinesSuccess = (data) => {
-  // console.log(data)
-  // console.log('getAllItems worked!')
-  // $('#show-food-list').empty()
-  // $('#show-grocery-list').empty()
   const showWinesInCellar = wineListingHandleBars({ wines: data.wines })
   $('#wine-collection').append(showWinesInCellar)
-  // $('#add-item-jumbotron').hide()
-  // $('#instr-jumbotron').hide()
-  // $('#change-password-jumbotron').hide()
-  // $('#sign-out-jumbotron').hide()
 }
 
 const readWinesFailure = (error) => {
@@ -31,8 +26,6 @@ const readWinesFailure = (error) => {
 
 const updateWineSuccess = (data) => {
   console.log(data)
-  // console.log('updateWine worked!')
-  // $('#show-food-list').empty()
 }
 
 const updateWineFailure = (error) => {
@@ -41,7 +34,6 @@ const updateWineFailure = (error) => {
 
 const deleteWineSuccess = (data) => {
   console.log(data)
-  // $('#show-food-list').empty()
 }
 
 const deleteWineFailure = (error) => {
