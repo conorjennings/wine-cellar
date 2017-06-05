@@ -162,7 +162,9 @@
   </div>
 </div>
 
-<!-- Create New Wine - Form -->
+<!-- ~~~~~~~~~~~~~~~~~~~~ -->
+<!-- Create Wine - Form   -->
+<!-- ~~~~~~~~~~~~~~~~~~~~ -->
    <form id="create-wine-form" class="col s6 add-wine-form">
        <fieldset>
      <div class="row">
@@ -251,10 +253,111 @@
      </div>
 
     <input type="submit" class="waves-effect red-grape-color deep-purple darken-3 btn"></input>
-    <input type="reset" id="closeResetForm" class="btn green-grape-color btn-secondary"></input>
+    <input type="reset" value="Cancel" id="closeResetForm" class="btn green-grape-color btn-secondary"></input>
 
   </fieldset>
 </form>
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~ -->
+<!-- Update Wine - Form   -->
+<!-- ~~~~~~~~~~~~~~~~~~~~ -->
+<div class = "update-one-wine">
+   <form id="update-wine-form" class="col s6 update-wine-form">
+       <fieldset>
+         <input type="text" id = "the-id" name="wine[id]" placeholder="id" hidden required>
+     <div class="row">
+       <div class="input-field col s6">
+        <input placeholder="Name of Wine" type="text" id="wine_name" name="wine[name]" class="autocomplete validate">
+         <label for="wine_name">Name</label>
+       </div>
+     </div>
+
+     <div class="row">
+       <div class="input-field col s6">
+         <input placeholder="Grape Variety" id="grape_name"  name="wine[grape]"  type="text" class="autocomplete validate">
+         <label for="grape_name">Grape</label>
+       </div>
+     </div>
+
+     <div class="row">
+       <div class="input-field col s6">
+      <p>
+         <input placeholder="Year" id="grape_year"  name="wine[year]"  type="text" >
+         <label for="grape_year">Year</label>
+       </p>
+       </div>
+     </div>
+
+     <div class="row">
+       <div class="input-field col s6">
+         <input placeholder="Region" id="region" type="text"  name="wine[region]"  class="autocomplete validate">
+         <label for="region">Region</label>
+       </div>
+     </div>
+
+     <div class="row">
+       <div class="input-field col s6">
+         <input placeholder="Country" id="country" type="text"  name="wine[country]"  class="autocomplete validate">
+         <label for="country">Country</label>
+       </div>
+     </div>
+
+     <div class="row">
+       <p class="col s6 range-field">
+         <label for="quantity">Quantity</label>
+         <input id="quantity" type="range"  name="wine[quantity]"  min="0" max="80" class="validate">
+      </p>
+     </div>
+
+
+     <div class="row">
+       <div class="input-field col s6">
+         <input placeholder="Notes - 80 characters only" id="notes"  name="wine[notes]"  type="text" class="validate" data-length="80">
+         <label for="notes">Notes</label>
+       </div>
+     </div>
+
+     <div class="row">
+       <div class="input-field col s6">
+         <input placeholder="URL path of wine label" id="url_picture" type="text" value="put URL link to wine label picture here"  name="wine[url_picture]"  class="validate">
+         <label for ="url_picture">Picture URL Link</label>
+       </div>
+     </div>
+
+     <div class="row">
+       <div class="input-field col 6  id="rating" name="wine[rating]" ">
+        <select>
+          <option value="0"selected>Rating Score</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+      <label>Rating</label>
+      </div>
+  </div>
+
+     <div class="row">
+       <p class="col s6 range-field">
+         <label for="price">Price</label>
+         <input id="price" type="range"  name="wine[price]"  min="0" max="80" class="validate">
+      </p>
+     </div>
+
+    <input type="submit" value="Update" class="waves-effect red-grape-color deep-purple darken-3 btn"></input>
+    <input type="reset" value="Cancel" id="closeResetForm" class="btn green-grape-color btn-secondary"></input>
+
+  </fieldset>
+</form>
+
+</div>
 
 </main>
 

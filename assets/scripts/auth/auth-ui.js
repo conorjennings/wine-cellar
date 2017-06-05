@@ -6,27 +6,23 @@ const helpers = require('./../helpers/helper-events')
 const wineQuotes = [
   `<blockquote class="center-align blockquote-wine">
     <p>"I cook with wine, sometimes I even add it to the food."</p>
-    <footer>"W.C. Fields"</footer>
+    <footer>- W.C. Fields</footer>
   </blockquote>`,
   `<blockquote class="center-align blockquote-wine">
     <p>"Wine makes daily living easier, less hurried, with fewer tensions and more tolerance"</p>
-    <footer>Benjamin Franklin</footer>
-  </blockquote>`,
-  `<blockquote class="center-align blockquote-wine">
-    <p>"I don't go by the ratings. I buy wine that tastes good. Statistically, anybody's ability to predict what will be a good wine a decade from now is limited"</p>
-    <footer>Richard Thaler</footer>
+    <footer>- Benjamin Franklin</footer>
   </blockquote>`,
   `<blockquote class="center-align blockquote-wine">
     <p>"Nothing makes the future look so rosy as to contemplate it through a glass of Chambertin"</p>
-    <footer>Napoleon Bonaparte</footer>
+    <footer>- Napoleon Bonaparte</footer>
   </blockquote>`,
   `<blockquote class="center-align blockquote-wine">
     <p>"What wine goes with Captain Crunch?"</p>
-    <footer>George Carlin</footer>
+    <footer>- George Carlin</footer>
   </blockquote>`,
   `<blockquote class="center-align blockquote-wine">
     <p>"I can certainly see that you know your wine. Most of the guests who stay here wouldn’t know the difference between Bordeaux and Claret."</p>
-    <footer>Basil Fawlty, Fawlty Towers</footer>
+    <footer>- Basil Fawlty, Fawlty Towers</footer>
   </blockquote>`
 ]
 
