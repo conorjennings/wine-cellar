@@ -30,6 +30,7 @@ const updateWine = function (data) {
   return $.ajax({
     url: config.apiOrigin + '/wines/' + data.wine.id,
     method: 'PATCH',
+    data: data,
     headers: {
       Authorization: 'Token token=' + store.user.token
     }

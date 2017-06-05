@@ -4,7 +4,7 @@ const wineListingHandleBars = require('../templates/wine-listing.handlebars')
 
 const createWineSuccess = (data) => {
   // console.log('createWineSuccess(): data is ', data)
-  store.wines = data.wine
+  // store.wines = data.wines
   // console.log('createWineSuccess():  store is ', store)
   $('#create-wine-form').hide()
   $('#create-wine-form').trigger('reset')
@@ -21,7 +21,7 @@ const readWinesSuccess = (data) => {
   const showWinesInCellar = wineListingHandleBars({ wines: data.wines })
   $('#wine-collection').append(showWinesInCellar)
   console.log('readWinesSuccess(): data is ', data)
-  store.wines = data.wine
+  store.wines = data.wines
   console.log('readWinesSuccess():  store is ', store)
 }
 

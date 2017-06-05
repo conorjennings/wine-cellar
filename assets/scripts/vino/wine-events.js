@@ -34,6 +34,7 @@ const updateWine = function (event) {
   event.preventDefault()
   // const id = $(this).attr('data-id')
   const data = getFormFields(event.target)
+  console.log('>>>updateWine where data = ', data)
   api.updateWine(data)
     .done(ui.updateWineSuccess)
     .fail(ui.updateWineFailure)
@@ -54,40 +55,42 @@ const deleteWine = function (event) {
 //   $('#create-wine-form').hide()
 // }
 
-const updateOneWine = function () {
-  event.preventDefault()
-  const id = $(this).attr('data-id')
-  console.log('updateOneWine() : id is: ' + id)
-  populateUpdateForm(id)
-    // .done(ui.UpdateChoreSuccess(), onGetChoresApi())
-    // .fail(ui.UpdateChoreFailure)
-}
+// const updateOneWine = function () {
+//   event.preventDefault()
+//   const id = $(this).attr('data-id')
+//   console.log('updateOneWine() : id is: ' + id)
+//   populateUpdateForm(id)
+//     // .done(ui.UpdateChoreSuccess(), onGetChoresApi())
+//     // .fail(ui.UpdateChoreFailure)
+// }
 
-const populateUpdateForm = function (id) {
+const populateUpdateForm = function () {
+  // event.preventDefault()
+  const id = $(this).attr('data-id')
   const wineBottle = findWineById(id)
-  console.log('populateUpdateForm(), wineBottle = ', wineBottle)
-  $('#the-id').val(wineBottle.id)
-  $('#the-name').val(wineBottle.name)
-  $('#grape').val(wineBottle.grape)
-  $('#year').val(wineBottle.year)
-  $('#year').val(wineBottle.region)
-  $('#year').val(wineBottle.country)
-  $('#year').val(wineBottle.quantity)
-  $('#year').val(wineBottle.notes)
-  $('#year').val(wineBottle.url_picture)
-  $('#year').val(wineBottle.rating)
-  $('#year').val(wineBottle.price)
+  // console.log('populateUpdateForm(), wineBottle = ', wineBottle)
+  // console.log('populateUpdateForm(), wineBottle.name = ', wineBottle.name)
+  $('#wine-id').val(wineBottle.id)
+  $('#wine-name').val(wineBottle.name)
+  $('#wine-grape').val(wineBottle.grape)
+  $('#wine-year').val(wineBottle.year)
+  $('#wine-region').val(wineBottle.region)
+  $('#wine-country').val(wineBottle.country)
+  $('#wine-quantity').val(wineBottle.quantity)
+  $('#wine-notes').val(wineBottle.notes)
+  $('#wine-url_picture').val(wineBottle.url_picture)
+  $('#wine-rating').val(wineBottle.rating)
+  $('#wine-price').val(wineBottle.price)
   // onShowUpdateChore()
 }
 
 const findWineById = function (idToCompare) {
   let result
-  debugger;
   let i
   for (i in store.wines) {
     const id = store.wines[i].id
     if (id - idToCompare === 0) {
-      console.log('Found a match!! store.wines[i] is ', store.wines[i])
+      // console.log('Found a match!! store.wines[i] is ', store.wines[i])
       return store.wines[i]
     }
   }
@@ -99,7 +102,8 @@ const wineHandlers = () => {
   $('#create-wine-form').on('submit', createWine)
   // $('#create-wine-form').on('click', '.close-create-wine', closeTheForm)
   $('#read-wines').on('click', readWines)
-  $(document).on('click', '.update-one-wine', updateOneWine)
+  $(document).on('click', '.update-one-wine', populateUpdateForm)
+  $('#update-wine-form').on('submit', updateWine)
   $(document).on('click', '.delete-wine', deleteWine)
 }
 
