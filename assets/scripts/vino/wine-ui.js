@@ -22,7 +22,7 @@ const readWinesSuccess = (data) => {
   $('#wine-collection').append(showWinesInCellar)
   console.log('readWinesSuccess(): data is ', data)
   store.wines = data.wines
-  console.log('readWinesSuccess():  store is ', store)
+  //  console.log('readWinesSuccess():  store is ', store)
 }
 
 const readWinesFailure = (error) => {

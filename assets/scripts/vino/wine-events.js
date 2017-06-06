@@ -71,6 +71,7 @@ const populateUpdateForm = function () {
   // console.log('populateUpdateForm(), wineBottle = ', wineBottle)
   // console.log('populateUpdateForm(), wineBottle.name = ', wineBottle.name)
   $('#wine-id').val(wineBottle.id)
+  $('#wine-polaroid-name').val(wineBottle.name)
   $('#wine-name').val(wineBottle.name)
   $('#wine-grape').val(wineBottle.grape)
   $('#wine-year').val(wineBottle.year)
@@ -81,7 +82,8 @@ const populateUpdateForm = function () {
   $('#wine-url_picture').val(wineBottle.url_picture)
   $('#wine-rating').val(wineBottle.rating)
   $('#wine-price').val(wineBottle.price)
-  // onShowUpdateChore()
+
+  $('#wine-picture').attr('src', wineBottle.url_picture)
 }
 
 const findWineById = function (idToCompare) {

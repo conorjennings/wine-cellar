@@ -1,5 +1,24 @@
-.thumbnail-image{
-  height:50%;
-  width: 50%;
 
+// Source:
+// https://designshack.net/articles/css/4-fun-css-image-effects-you-can-copy-and-paste/
+.polaroid {
+  position: relative;
+  width: 220px;
+}
+
+.polaroid img {
+  border: 10px solid #fff;
+  border-bottom: 45px solid #fff;
+  -webkit-box-shadow: 3px 3px 3px #777;
+     -moz-box-shadow: 3px 3px 3px #777;
+          box-shadow: 3px 3px 3px #777;
+}
+
+.polaroid p {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  bottom: 0px;
+  font: 400 28px/1 'Kaushan Script', cursive;
+  color: black;
 }

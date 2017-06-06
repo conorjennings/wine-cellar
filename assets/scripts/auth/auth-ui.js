@@ -23,6 +23,18 @@ const wineQuotes = [
   `<blockquote class="center-align blockquote-wine">
     <p>"I can certainly see that you know your wine. Most of the guests who stay here wouldn’t know the difference between Bordeaux and Claret."</p>
     <footer>- Basil Fawlty, Fawlty Towers</footer>
+  </blockquote>`,
+  `<blockquote class="center-align blockquote-wine">
+    <p>"I tried cooking with wine. Didn’t go so well. After 5 glasses, I forgot why I was even in the kitchen"</p>
+    <footer>- Anonymous</footer>
+  </blockquote>`,
+  `<blockquote class="center-align blockquote-wine">
+    <p>"Seven days without wine makes one weak."</p>
+    <footer>- Anonymous</footer>
+  </blockquote>`,
+  `<blockquote class="center-align blockquote-wine">
+    <p>"Wine is a living liquid containing no preservatives. Its life cycle comprises youth, maturity, old age, and death. When not treated with reasonable respect it will sicken and die"</p>
+    <footer>- Julia Child</footer>
   </blockquote>`
 ]
 
