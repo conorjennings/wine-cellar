@@ -42,8 +42,9 @@ const updateWine = function (event) {
 
 const deleteWine = function (event) {
   event.preventDefault()
-  const data = getFormFields(event.target)
-  api.deleteWine(data)
+  const id = $(this).attr('data-id')
+  console.log('deleteWine, id is ', id)
+  api.deleteWine(id)
     .done(ui.deleteWineSuccess)
     .fail(ui.deleteWineFailure)
 }

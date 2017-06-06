@@ -29,20 +29,20 @@ const readWinesFailure = (error) => {
   console.error(error)
 }
 
-const updateWineSuccess = (data) => {
-  console.log(data)
+const updateWineSuccess = () => {
+  console.log('updateWineSuccess')
 }
 
 const updateWineFailure = (error) => {
   console.error(error)
 }
 
-const deleteWineSuccess = (data) => {
-  console.log(data)
+const deleteWineSuccess = () => {
+  console.log('deleteWineSuccess')
 }
 
 const deleteWineFailure = (error) => {
-  console.error(error)
+  console.log('deleteWineFailure, error is ', error)
 }
 
 module.exports = {

@@ -47,7 +47,7 @@
 <main role="main" class="flow-text">
 
  <!-- SIGN UP SECTION -->
-  <div class="row container center section sign-up-section">
+  <div class="row container section sign-up-section">
      <form id = "sign-up-form" class="col s12">
        <div class="row">
          <div class="input-field col s4">
@@ -84,7 +84,7 @@
    </div>   <!-- End of Sign Up Form -->
 
   <!-- SIGN IN SECTION -->
-  <div class="row container center section sign-in-section">
+  <div class="row container section sign-in-section">
     <form id = "sign-in-form" class="col s12">
       <div class="row">
         <div class="input-field col s4">
@@ -109,7 +109,7 @@
 
 
    <!-- CHANGE PASSWORD SECTION -->
-   <div class="row container center section change-password-section">
+   <div class="row container section change-password-section">
      <form id = "change-password-form" class="col s12">
 
        <div class="row">
@@ -148,7 +148,7 @@
     <div class="parallax" id="preload-red-wine-jpg"><img src="images/glass-red-wine-grape.jpg" alt="glass-red-wine" class="responsive-img"></div>
   </div>
 
-  <div class="section white">
+  <div class="section">
     <div class="row container">
       <h2 class="header">Wine Collection</h2>
       <button class="grey-text text-lighten-4 wine-list green-grape-color" id ="read-wines">Wine List</button>
@@ -166,7 +166,7 @@
 <!-- ~~~~~~~~~~~~~~~~~~~~ -->
 <!-- Create Wine - Form   -->
 <!-- ~~~~~~~~~~~~~~~~~~~~ -->
-   <form id="create-wine-form" class="row container center section add-wine-form">
+   <form id="create-wine-form" class="row container section add-wine-form">
       <h3> Add New Wine</h3>
      <div class="row">
        <div class="input-field col s6">
@@ -208,7 +208,7 @@
      <div class="row">
        <div class="col s6 range-field">
          <label for="quantity">Quantity</label>
-         <input id="quantity" type="range"  name="wine[quantity]"  min="0" max="80" class="validate">
+         <input id="quantity" type="range"  name="wine[quantity]"  min="0" max="150" class="validate">
       </div>
      </div>
 
@@ -253,7 +253,7 @@
       </div>
      </div>
 
-    <input type="submit" class="waves-effect red-grape-color deep-purple darken-3 btn"></input>
+    <input type="submit" value="Add" class="waves-effect red-grape-color deep-purple darken-3 btn"></input>
     <input type="reset" value="Cancel" id="closeResetForm" class="btn green-grape-color btn-secondary"></input>
 
 </form>
@@ -263,7 +263,7 @@
 <!-- Update Wine - Form   -->
 <!-- ~~~~~~~~~~~~~~~~~~~~ -->
 <!-- <form id="update-wine-form"> -->
-   <form id="update-wine-form" class="row container center">
+   <form id="update-wine-form" class="row container">
      <h3> Update Wine Listing</h3>
      <div id="update-form-picture">
      <div class="polaroid center">
@@ -361,7 +361,6 @@
 
  <input type="submit" value="Update" class="waves-effect red-grape-color deep-purple darken-3 btn"></input>
  <input type="reset" value="Cancel" id="closeResetForm" class="btn green-grape-color btn-secondary"></input>
-
 </fieldset>
 </form>
 

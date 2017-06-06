@@ -43,6 +43,10 @@
    box-shadow: 0 1px 0 0 #000;
  }
 
+#create-wine-form #update-wine-form {
+    background:rgba(209,196,233, 0.1);
+}
+
  .page-footer {
      background-color: #a0bb2d;
  }
@@ -69,7 +73,7 @@
  }
 
  .blockquote-wine{
-   border-left: 5px solid rgb(255,255,255); /* Change default color of blockquote to match page background */
+   border-left: 5px solid rgb(237,242,241); /* Change default color of blockquote to match page background on parallax */
  }
 nav ul li:hover {
   background-color: #591248;

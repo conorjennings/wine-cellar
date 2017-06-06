@@ -32,6 +32,11 @@
               </tr>
           </tbody>
 
+          <td><button type="button" class="remove-chore btn btn-default" data-id="{{chore.id}}"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button></td>
+<td><button type="button" class="update-chore btn btn-default" data-id="{{chore.id}}"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></td>
+
+
+
         </table>
 {{/each}} -->
 
@@ -47,8 +52,16 @@
       </h5>
           <h6>{{wine.grape}}</h6>
           <h6>{{wine.year}}</h6>
-      <p><button class="btn btn-primary red-grape-color update-one-wine" data-id="{{wine.id}}">View Details</button>
+      <!-- <p><button class="btn btn-primary red-grape-color update-one-wine" data-id="{{wine.id}}">Details/Update</button> -->
+      <!-- <p><button class="btn btn-primary red delete-wine" data-id="{{wine.id}}">Delete Wine</button>   <i class="material-icons right">mode_edit</i><p> -->
+      <button type="button" class="update-one-wine btn btn-default" data-id="{{wine.id}}"><i class="material-icons right">mode_edit</i></button>
+      <button type="button" class="delete-wine btn btn-default" data-id="{{wine.id}}"><i class="material-icons right">delete_forever</i></button>
+      </p>
       </div>
  </div>
 
 {{/each}}
+
+<!--
+<a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>button</a> -->
+  <!-- delete_forever -->

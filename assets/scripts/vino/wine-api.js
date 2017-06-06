@@ -37,9 +37,9 @@ const updateWine = function (data) {
   })
 }
 
-const deleteWine = (data) => {
+const deleteWine = (id) => {
   return $.ajax({
-    url: config.apiOrigin + '/wines/' + data.wine.id,
+    url: config.apiOrigin + '/wines/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
