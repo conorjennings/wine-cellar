@@ -5,7 +5,7 @@
 
 require('materialize-css/sass/materialize.scss')
 require('materialize-css/js/materialize.js')
-require('materialize-css/js/init.js')  // Need this to allow materialize-css to use the JS functionality
+// require('materialize-css/js/init.js') // Turned if off to remove the donate.png error per this solution: https://github.com/Dogfalo/materialize/issues/3569
 
 // load manifests
 // scripts
