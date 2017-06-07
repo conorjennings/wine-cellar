@@ -1,4 +1,9 @@
 'use strict'
+// The following is required to turn off an ESLinter error on Materialize.toast.
+// It has no impact on any functionality in either localhost or on deployed site.
+// Source: http://eslint.org/docs/rules/no-undef
+/* global Materialize */
+/* eslint no-undef: "error" */
 
 const store = require('../store')
 const helpers = require('./../helpers/helper-events')
@@ -38,11 +43,17 @@ const wineQuotes = [
   </blockquote>`
 ]
 
+// Using Durstenfeld shuffle algorithm.
 const onLoadRandomWineQuote = function (wineQuotes) {
-  const options = wineQuotes.length
-  const random = Math.floor(Math.random() * (options - 0 + 1)) + 0
-  const quote = wineQuotes[random]
-  return quote
+  let i
+
+  for (i = wineQuotes.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    const temp = wineQuotes[i]
+    wineQuotes[i] = wineQuotes[j]
+    wineQuotes[j] = temp
+  }
+  return wineQuotes[i]
 }
 
 const signUpSuccess = (data) => {

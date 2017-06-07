@@ -14,9 +14,8 @@ const createWineOpenForm = function () {
 const createWine = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  // console.log('createWine(): data is ', data)
   if (data.wine.url_picture === 'put URL link to wine label picture here') {
-    data.wine.url_picture = 'images/genericWine.png'
+    data.wine.url_picture = 'https://raw.githubusercontent.com/conorjennings/wine-cellar/master/assets/images/genericWine.png'
   }
   api.createWine(data)
     .done(ui.createWineSuccess)
@@ -35,27 +34,15 @@ const updateWine = function (event) {
   event.preventDefault()
   // const id = $(this).attr('data-id')
   const data = getFormFields(event.target)
-  console.log('>>>updateWine where data = ', data)
   api.updateWine(data)
     .done(ui.updateWineSuccess)
     .fail(ui.updateWineFailure)
   readWines()
 }
 
-// const deleteWine = function (event) {
-//   event.preventDefault()
-//   const id = $(this).attr('data-id')
-//   console.log('deleteWine, id is ', id)
-//   api.deleteWine(id)
-//     .done(ui.deleteWineSuccess)
-//     readWines()
-//     .fail(ui.deleteWineFailure)
-// }
-
 const deleteWine = function (event) {
   event.preventDefault()
   const id = $(this).attr('data-id')
-  console.log('deleteWine, id is ', id)
   api.deleteWine(id)
   .then(function (id) {
     ui.deleteWineSuccess(id)
@@ -91,7 +78,6 @@ const findWineById = function (idToCompare) {
   for (i in store.wines) {
     const id = store.wines[i].id
     if (id - idToCompare === 0) {
-      // console.log('Found a match!! store.wines[i] is ', store.wines[i])
       return store.wines[i]
     }
   }

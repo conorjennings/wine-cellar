@@ -1,5 +1,11 @@
 'use strict'
 
+// The following is required to turn off an ESLinter error on Materialize.toast.
+// It has no impact on any functionality in either localhost or on deployed site.
+// Source: http://eslint.org/docs/rules/no-undef
+/* global Materialize */
+/* eslint no-undef: "error" */
+
 const getFormFields = require(`../../../lib/get-form-fields`)
 const api = require('./auth-api')
 const ui = require('./auth-ui')
