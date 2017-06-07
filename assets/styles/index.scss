@@ -45,5 +45,5 @@ body {
 // }
 
 // This code is used to preload the parallax pictures into cache before page loads:
-#preload-red-wine-jpg { background: url('../../images/glass-red-wine-grape.jpg') no-repeat -9999px -9999px; }
-#preload-white-wine-jpg { background: url('../../images/glass-of-white-wine.jpg') no-repeat -9999px -9999px; }
+#preload-red-wine-jpg { background: url('https://raw.githubusercontent.com/conorjennings/wine-cellar/master/assets/images/glass-red-wine-grape.jpg') no-repeat -9999px -9999px; }
+#preload-white-wine-jpg { background: url('https://raw.githubusercontent.com/conorjennings/wine-cellar/master/assets/images/glass-of-white-wine.jpg') no-repeat -9999px -9999px; }
