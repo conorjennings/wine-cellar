@@ -68,7 +68,6 @@ const signUpFailure = (error) => {
 // Important to use tokens (change each time you sign in) over using IDs
 const signInSuccess = (data) => {
   store.user = data.user
-  console.log('token is ', data.user.token)
   const msg = $('<h6>You have successfully signed in..</h6>')
   Materialize.toast(msg, 2000, 'rounded green')
   $('#sign-in-form').trigger('reset')

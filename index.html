@@ -166,11 +166,11 @@
 <!-- ~~~~~~~~~~~~~~~~~~~~ -->
 <!-- Create Wine - Form   -->
 <!-- ~~~~~~~~~~~~~~~~~~~~ -->
-   <form id="create-wine-form" class="row container section add-wine-form">
+   <!-- <form id="create-wine-form" class="row container section add-wine-form">
       <h3> Add New Wine</h3>
      <div class="row">
-       <div class="input-field col s6">
-        <input placeholder="Name of Wine" type="text" id="wine_name" name="wine[name]" class="autocomplete validate">
+       <div class="input-field inline col s6">
+        <input placeholder="Vineyard" type="text" id="wine_name" name="wine[name]" class="autocomplete validate">
          <label for="wine_name">Name</label>
        </div>
      </div>
@@ -228,25 +228,6 @@
      </div>
 
      <div class="row">
-       <div class="input-field col s6  id="rating" name="wine[rating]" ">
-        <select>
-          <option value="0"selected>Rating Score</option>
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-          <option value="10">10</option>
-        </select>
-      <label>Rating</label>
-      </div>
-  </div>
-
-     <div class="row">
        <div class="col s6 range-field">
          <label for="price">Price</label>
          <input id="price" type="range"  name="wine[price]"  min="0" max="80" class="validate">
@@ -254,115 +235,187 @@
      </div>
 
     <input type="submit" value="Add" class="waves-effect red-grape-color deep-purple darken-3 btn"></input>
-    <input type="reset" value="Cancel" id="closeResetForm" class="btn green-grape-color btn-secondary"></input>
+    <input type="reset" value="Cancel" id="closeCreateForm" class="btn green-grape-color btn-secondary"></input>
 
-</form>
+</form> -->
+
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~ -->
+<!-- CREATE Wine Form   -->
+<!-- ~~~~~~~~~~~~~~~~~~~~ -->
+<div class="row">
+    <form id="create-wine-form" class="col s12 add-wine-form">
+        <h3> Add Wine</h3>
+
+          <div class="row">
+            <div class="input-field inline col s6">
+                <input type="text" id="wine_name" name="wine[name]" class="autocomplete validate">
+                <label for="wine_name" data-error="Please enter a valid wine">Name</label>
+            </div>
+            <div class="input-field inline col s6">
+                <input id="grape_name" name="wine[grape]" type="text" class="autocomplete validate data-error">
+                <label for="grape_name">Grape</label>
+            </div>
+        </div>
+        <!-- end of row 1 -->
+
+        <div class="row">
+            <div class="input-field inline col s6">
+                <input id="grape_year" name="wine[year]" type="text">
+                <label for="grape_year">Year</label>
+            </div>
+            <div class="input-field inline col s6">
+                <input id="region" type="text" name="wine[region]" class="autocomplete validate">
+                <label for="region">Region</label>
+            </div>
+        </div>
+        <!-- end of row 2 -->
+
+        <div class="row">
+            <div class="input-field inline col s6">
+                <input id="country" type="text" name="wine[country]" class="autocomplete validate">
+                <label for="country">Country</label>
+            </div>
+            <div class="range-field inline col s6">
+                <label for="quantity">Quantity</label>
+                <input id="quantity" type="range" name="wine[quantity]" min="0" max="60" class="validate">
+            </div>
+        </div>
+        <!-- end of row 3 -->
+
+        <div class="row">
+            <div class="input-field inline col s6" id="rating" name="wine[rating]">
+                <select>
+                <option value="0"selected>Score</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+                <label>Rating</label>
+            </div>
+            <div class="range-field inline col s6">
+              <label for="price">Price</label>
+              <input id="price" type="range" name="wine[price]" min="0" max="80" class="validate">
+
+            </div>
+        </div>
+
+        <!-- end of row 4 -->
+
+        <div class="row">
+            <div class="input-field inline col s6">
+                <input placeholder="Tasting Notes" id="notes" name="wine[notes]" type="text" class="validate" data-length="80">
+                <label for="notes">Notes</label>
+            </div>
+            <div class="input-field inline col s6">
+                <input placeholder="URL Picture" id="url_picture" type="text" name="wine[url_picture]" class="validate">
+                <label for="url_picture">Picture URL</label>
+            </div>
+        </div>
+
+        <!-- end of row 5 -->
+        <input type="submit" value="Add" class="waves-effect red-grape-color deep-purple darken-3 btn"></input>
+        <input type="reset" value="Cancel" id="closeCreateForm" class="btn green-grape-color btn-secondary"></input>
+    </form>
+</div>
+
+<!-- end of DIV for add wine form -->
 
 
 <!-- ~~~~~~~~~~~~~~~~~~~~ -->
 <!-- Update Wine - Form   -->
 <!-- ~~~~~~~~~~~~~~~~~~~~ -->
-<!-- <form id="update-wine-form"> -->
-   <form id="update-wine-form" class="row container">
-     <h3> Update Wine Listing</h3>
-     <div id="update-form-picture">
-     <div class="polaroid center">
-       <!-- <p><input type="text" id="wine-polaroid-name" readonly="readonly"></p> -->
-       <p></p>
-       <img class="center-align responsive-img" id="wine-picture" />
-     </div>
+<div class="row">
+    <form id="update-wine-form" class="col s12">
+        <h3> Update Wine Listing</h3>
 
-    <fieldset>
-      <input type="text" id="wine-id" name="wine[id]" placeholder="id" hidden required>
-  <div class="row">
-    <div class="input-field col s6">
-     <input placeholder="Name of Wine" type="text" id="wine-name" name="wine[name]" class="autocomplete validate">
-      <label for="wine_name">Name</label>
-    </div>
-  </div>
+        <div id="update-form-picture">
+            <div class="polaroid center">
+                <!-- <p><input type="text" id="wine-polaroid-name" readonly="readonly"></p> -->
+                <p></p>
+                <img class="center-align responsive-img" id="wine-picture" />
+            </div>
+        </div>
 
-  <div class="row">
-    <div class="input-field col s6">
-      <input placeholder="Grape Variety" id="wine-grape"  name="wine[grape]"  type="text" class="autocomplete validate">
-      <label for="grape_name">Grape</label>
-    </div>
-  </div>
+        <input type="text" id="wine-id" name="wine[id]" placeholder="id" hidden required>
 
-  <div class="row">
-    <div class="input-field col s6">
-   <p>
-      <input placeholder="Year" id="wine-year"  name="wine[year]"  type="text" >
-      <label for="grape_year">Year</label>
-    </p>
-    </div>
-  </div>
+        <div class="row">
+            <div class="input-field inline col s6">
+                <input placeholder="Vineyard Name" type="text" id="wine-name" name="wine[name]" class="autocomplete validate">
+                <label for="wine_name" data-error="Please enter a valid wine">Name</label>
+            </div>
+            <div class="input-field inline col s6">
+                <input placeholder="Grape Variety" id="wine-grape" name="wine[grape]" type="text" class="autocomplete validate data-error">
+                <label for="grape_name">Grape</label>
+            </div>
+        </div>
+        <!-- end of row 1 -->
 
-  <div class="row">
-    <div class="input-field col s6">
-      <input placeholder="Region" id="wine-region" type="text"  name="wine[region]"  class="autocomplete validate">
-      <label for="region">Region</label>
-    </div>
-  </div>
+        <div class="row">
+            <div class="input-field inline col s6">
+                <input placeholder="Vintage" id="wine-year" name="wine[year]" type="text">
+                <label for="grape_year">Year</label>
+            </div>
+            <div class="input-field inline col s6">
+                <input placeholder="Region" id="wine-region" type="text" name="wine[region]" class="autocomplete validate">
+                <label for="region">Region</label>
+            </div>
+        </div>
+        <!-- end of row 2 -->
 
-  <div class="row">
-    <div class="input-field col s6">
-      <input placeholder="Country" id="wine-country" type="text"  name="wine[country]"  class="autocomplete validate">
-      <label for="country">Country</label>
-    </div>
-  </div>
+        <div class="row">
+            <div class="input-field inline col s6">
+                <input placeholder="Country" id="wine-country" type="text" name="wine[country]" class="autocomplete validate">
+                <label for="country">Country</label>
+            </div>
+            <div class="range-field inline col s6">
+                <label for="quantity">Quantity</label>
+                <input placeholder="Quantity" id="wine-quantity" type="range" name="wine[quantity]" min="0" max="60" class="validate">
+            </div>
+        </div>
+        <!-- end of row 3 -->
 
-  <div class="row">
-    <p class="col s6 range-field">
-      <label for="quantity">Quantity</label>
-      <input id="wine-quantity" type="range"  name="wine[quantity]"  min="0" max="80" class="validate">
-   </p>
-  </div>
+        <div class="row">
+            <div class="input-field inline col s6" id="wine-rating" name="wine[rating]">
+                <select>
+                <option value="0"selected>Score</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+                <label>Rating</label>
+            </div>
+            <div class="range-field inline col s6">
+              <label placeholder="Price" for="price">Price</label>
+              <input id="wine-price" type="range" name="wine[price]" min="0" max="80" class="validate">
+
+            </div>
+        </div>
+
+        <!-- end of row 4 -->
+
+        <div class="row">
+            <div class="input-field inline col s6">
+                <input placeholder="Tasting Notes" id="wine-notes" name="wine[notes]" type="text" class="validate" data-length="80">
+                <label for="notes">Notes</label>
+            </div>
+            <div class="input-field inline col s6">
+                <input placeholder="URL Picture" id="wine-url_picture" type="text" name="wine[url_picture]" class="validate">
+                <label for="url_picture">Picture URL</label>
+            </div>
+        </div>
 
 
-  <div class="row">
-    <div class="input-field col s6">
-      <input placeholder="Notes - 80 characters only" id="wine-notes"  name="wine[notes]"  type="text" class="validate" data-length="80">
-      <label for="notes">Notes</label>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="input-field col s6">
-      <input placeholder="URL path of wine label" id="wine-url_picture" type="text" value="put URL link to wine label picture here"  name="wine[url_picture]"  class="validate">
-      <label for ="url_picture">Picture URL Link</label>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="input-field col 6  id="wine-rating" name="wine[rating]" ">
-     <select>
-       <option value="0"selected>Rating Score</option>
-       <option value="1">1</option>
-       <option value="2">2</option>
-       <option value="3">3</option>
-       <option value="4">4</option>
-       <option value="5">5</option>
-       <option value="6">6</option>
-       <option value="7">7</option>
-       <option value="8">8</option>
-       <option value="9">9</option>
-       <option value="10">10</option>
-     </select>
-   <label>Rating</label>
-   </div>
-</div>
-
-  <div class="row">
-    <p class="col s6 range-field">
-      <label for="price">Price</label>
-      <input id="wine-price" type="range"  name="wine[price]"  min="0" max="80" class="validate">
-   </p>
-  </div>
-
- <input type="submit" value="Update" class="waves-effect red-grape-color deep-purple darken-3 btn"></input>
- <input type="reset" value="Cancel" id="closeResetForm" class="btn green-grape-color btn-secondary"></input>
-</fieldset>
-</form>
+        <!-- end of row 5 -->
+        <input type="submit" value="Update" class="waves-effect red-grape-color deep-purple darken-3 btn"></input>
+        <input type="reset" value="Cancel" id="closeResetForm" class="btn green-grape-color btn-secondary"></input>
+    </form>
+</div>  <!-- end of DIV for update wine form -->
 
 
 </main>
