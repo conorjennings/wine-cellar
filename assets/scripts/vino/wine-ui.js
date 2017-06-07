@@ -19,7 +19,7 @@ const createWineFailure = (error) => {
 
 const readWinesSuccess = (data) => {
   const showWinesInCellar = wineListingHandleBars({ wines: data.wines })
-  $('#wine-collection').append(showWinesInCellar)
+  $('#wine-collection').html(showWinesInCellar)
   console.log('readWinesSuccess(): data is ', data)
   store.wines = data.wines
   //  console.log('readWinesSuccess():  store is ', store)
@@ -30,7 +30,8 @@ const readWinesFailure = (error) => {
 }
 
 const updateWineSuccess = () => {
-  console.log('updateWineSuccess')
+  $('#update-wine-form').hide()
+  $('#update-wine-form').trigger('reset')
 }
 
 const updateWineFailure = (error) => {

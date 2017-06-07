@@ -21,6 +21,7 @@ const createWine = function (event) {
   api.createWine(data)
     .done(ui.createWineSuccess)
     .fail(ui.createWineFailure)
+  readWines()
 }
 
 const readWines = function (event) {
@@ -38,39 +39,37 @@ const updateWine = function (event) {
   api.updateWine(data)
     .done(ui.updateWineSuccess)
     .fail(ui.updateWineFailure)
+  readWines()
 }
+
+// const deleteWine = function (event) {
+//   event.preventDefault()
+//   const id = $(this).attr('data-id')
+//   console.log('deleteWine, id is ', id)
+//   api.deleteWine(id)
+//     .done(ui.deleteWineSuccess)
+//     readWines()
+//     .fail(ui.deleteWineFailure)
+// }
 
 const deleteWine = function (event) {
   event.preventDefault()
   const id = $(this).attr('data-id')
   console.log('deleteWine, id is ', id)
   api.deleteWine(id)
-    .done(ui.deleteWineSuccess)
-    .fail(ui.deleteWineFailure)
+  .then(function (id) {
+    ui.deleteWineSuccess(id)
+    readWines()
+  })
+  .catch(ui.deleteWineFailure)
 }
 
-// const closeTheForm = function () {
-//   // helpers.closeForm($(formName)
-//   console.log('got here')
-//   $('.add-wine-form').val('')
-//   $('#create-wine-form').hide()
-// }
-
-// const updateOneWine = function () {
-//   event.preventDefault()
-//   const id = $(this).attr('data-id')
-//   console.log('updateOneWine() : id is: ' + id)
-//   populateUpdateForm(id)
-//     // .done(ui.UpdateChoreSuccess(), onGetChoresApi())
-//     // .fail(ui.UpdateChoreFailure)
-// }
-
 const populateUpdateForm = function () {
+  $('.parallax-section').hide()
+  $('#update-wine-form').show()
   // event.preventDefault()
   const id = $(this).attr('data-id')
   const wineBottle = findWineById(id)
-  // console.log('populateUpdateForm(), wineBottle = ', wineBottle)
-  // console.log('populateUpdateForm(), wineBottle.name = ', wineBottle.name)
   $('#wine-id').val(wineBottle.id)
   $('#wine-polaroid-name').val(wineBottle.name)
   $('#wine-name').val(wineBottle.name)
@@ -83,7 +82,6 @@ const populateUpdateForm = function () {
   $('#wine-url_picture').val(wineBottle.url_picture)
   $('#wine-rating').val(wineBottle.rating)
   $('#wine-price').val(wineBottle.price)
-
   $('#wine-picture').attr('src', wineBottle.url_picture)
 }
 
@@ -100,13 +98,25 @@ const findWineById = function (idToCompare) {
   result
 }
 
+const onHideCreateWine = function () {
+  $('#create-wine-form').hide()
+  $('.parallax-section').show()
+}
+
+const onHideUpdateWine = function () {
+  $('#update-wine-form').hide()
+  $('.parallax-section').show()
+  $('#wine-collection').hide()
+}
+
 const wineHandlers = () => {
   $('.create-wine-open-form').on('click', createWineOpenForm)
   $('#create-wine-form').on('submit', createWine)
-  // $('#create-wine-form').on('click', '.close-create-wine', closeTheForm)
+  $('#create-wine-form').on('reset', onHideCreateWine)
   $('#read-wines').on('click', readWines)
   $(document).on('click', '.update-one-wine', populateUpdateForm)
   $('#update-wine-form').on('submit', updateWine)
+  $('#update-wine-form').on('reset', onHideUpdateWine)
   $(document).on('click', '.delete-wine', deleteWine)
 }
 
