@@ -13,12 +13,12 @@ const helpers = require('./../helpers/helper-events')
 
 const onSignUp = function (event) {
   event.preventDefault()
-  $('.progress').show()
+  // $('.progress').show()
   const data = getFormFields(event.target)
 
   if (data.credentials.password !== data.credentials.password_confirmation) {
-    const errorMessage = $('<h4>Either your password doesn\'t  match or the user id is taken</h4>')
-    Materialize.toast(errorMessage, 3000, 'rounded red')
+    const errorMessage = $('<h6>Either your password doesn\'t  match or the user id is taken</h6>')
+    Materialize.toast(errorMessage, 2000, 'rounded red')
     $('#sign-up-form').trigger('reset')
     helpers.setFocusToTextBox('sign-up-form-email')
   } else {

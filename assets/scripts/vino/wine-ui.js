@@ -18,7 +18,6 @@ const createWineFailure = (error) => {
 
 const readWinesSuccess = (data) => {
   store.wines = data.wines
-  //  console.log('>>> Entering readWinesSuccess with data ', data)
   // Sort wines by ID so they are always in the same order.
   data.wines.sort(function (a, b) {
     return a.id - b.id
@@ -28,8 +27,6 @@ const readWinesSuccess = (data) => {
   $('#wine-collection').show()
   const randomWineQuote = helpers.onLoadRandomWineQuote()
   $('.random-wine-quote').html(randomWineQuote)
-  // console.log('showWinesInCellar = ', showWinesInCellar)
-  // $('#wine-collection').html(showWinesInCellar)
 }
 
 const readWinesFailure = (error) => {
