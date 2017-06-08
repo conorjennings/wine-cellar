@@ -11,7 +11,7 @@ const uxHandlers = () => {
   $('#create-wine-form').hide()
   $('#update-wine-form').hide()
   $('#closeResetForm').on('click', function () {
-    console.log('>>>> Inside uxShowHideClear')
+    // console.log('>>>> Inside uxShowHideClear')
     $('#create-wine-form').hide()
     $('#wine_name').val('')
     $('wine_grape').val('')

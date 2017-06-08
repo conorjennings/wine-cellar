@@ -56,7 +56,16 @@ const onReadWinesApi = () => {
 const updateWine = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('updateWine(), data = ', data)
+  const todayDate = new Date().toJSON().slice(0, 10).replace(/-/g, '/')
+  console.log('todays date is ', todayDate)
+// This converts the string version of date to an actual date version for comparison
+// to ensure a user cannot enter a task BEFORE today's date.
+  const yrEnteredDate = new Date(data.wine.year).toJSON().slice(0, 10).replace(/-/g, '/')
+  console.log('yrEnteredDate is ', yrEnteredDate)
+  if (yrEnteredDate > todayDate) {
+    console.log('incorrect year!!!!')
+  }
+  // console.log('updateWine(), data = ', data)
   api.updateWine(data)
   .then(function (data) {
     ui.updateWineSuccess()
@@ -82,7 +91,6 @@ const populateUpdateForm = function () {
   // event.preventDefault()
   const id = $(this).attr('data-id')
   const wineBottle = findWineById(id)
-  console.log('winebottle is ', wineBottle)
   $('#wine-id').val(wineBottle.id)
   $('#wine-polaroid-name').val(wineBottle.name)
   $('#wine-name').val(wineBottle.name)

@@ -1,17 +1,17 @@
 'use strict'
 
-const setFocusToTextBox = function (IdName) {
+const setFocusToTextBox = function(IdName) {
   document.getElementById(IdName).focus()
 }
 
-const closeForm = function (formName) {
-//  formName.close()
+const closeForm = function(formName) {
+  //  formName.close()
   $('.add-wine-form').val('')
   $('#create-wine-form').hide()
 }
 
 // Using Durstenfeld shuffle algorithm.
-const onLoadRandomWineQuote = function () {
+const onLoadRandomWineQuote = function() {
   // console.log('>> onLoadRandomWineQuote')
   let i
   const wineQuotes = [

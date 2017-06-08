@@ -57,21 +57,21 @@
        <div class="row">
          <div class="input-field col s4">
            <!-- <i class="material-icons prefix">account_circle</i> -->
-           <input name="credentials[email]" id="sign-up-form-email" type="text" class="validate">
-           <label for="email"  data-error="incorrect email" data-success="correct">Email</label>
+           <input name="credentials[email]" id="sign-up-form-email" type="text" class="validate" required="" aria-required="true">
+           <label for="email" data-error="wrong" data-success="correct">Email</label>
          </div>
        </div>
 
        <div class="row">
            <div class="input-field col s4">
-           <input type="password" name="credentials[password]" id="sign-up-form-password" class="validate">
+           <input type="password" name="credentials[password]" id="sign-up-form-password" class="validate" required="" aria-required="true">
            <label for="last_name">Password</label>
          </div>
        </div>
 
        <div class="row">
          <div class="input-field col s4">
-           <input type="password" name="credentials[password_confirmation]" id="sign-up-form-password-confirm" class="validate">
+           <input type="password" name="credentials[password_confirmation]" id="sign-up-form-password-confirm" class="validate" required="" aria-required="true">
            <label for="last_name">Confirm Password</label>
          </div>
        </div>
@@ -93,14 +93,14 @@
     <form id = "sign-in-form" class="col s12">
       <div class="row">
         <div class="input-field col s4">
-          <input name="credentials[email]" id="sign-in-form-email" type="text" class="validate" >
-          <label for="email">Email</label>
+          <input name="credentials[email]" id="sign-in-form-email" type="text" class="validate" required="" aria-required="true" >
+          <label for="email" data-error="wrong">Email</label>
         </div>
       </div>
 
       <div class="row">
           <div class="input-field col s4">
-          <input type="password" name="credentials[password]" id="sign-in-form-password"  class="validate">
+          <input type="password" name="credentials[password]" id="sign-in-form-password"  class="validate" required="" aria-required="true">
           <label for="last_name">Password</label>
         </div>
       </div>
@@ -118,14 +118,14 @@
      <form id = "change-password-form" class="col s12">
 
        <div class="row">
-           <div class="input-field col s4">
+           <div class="input-field col s4 validate" required="" aria-required="true">
            <input type="password" name="passwords[old]" id="old-password">
            <label for="last_name">Old Password</label>
          </div>
        </div>
 
        <div class="row">
-           <div class="input-field col s4">
+           <div class="input-field col s4 validate" required="" aria-required="true">
            <input type="password" name="passwords[new]" id="new-password">
            <label for="last_name">New Password</label>
          </div>
@@ -175,11 +175,11 @@ https://github.com/ga-wdi-boston/full-stack-project/issues/693
 
           <div class="row">
             <div class="input-field inline col s6">
-                <input type="text" id="wine_name" name="wine[name]" class="autocomplete validate">
+                <input type="text" id="wine_name" name="wine[name]" class="autocomplete validate" required="" aria-required="true">
                 <label for="wine_name" data-error="Please enter a valid wine">Name</label>
             </div>
             <div class="input-field inline col s6">
-                <input id="grape_name" name="wine[grape]" type="text" class="autocomplete validate data-error">
+                <input id="grape_name" name="wine[grape]" type="text" class="autocomplete validate" required="" aria-required="true">
                 <label for="grape_name">Grape</label>
             </div>
         </div>
@@ -187,11 +187,11 @@ https://github.com/ga-wdi-boston/full-stack-project/issues/693
 
         <div class="row">
             <div class="input-field inline col s6">
-                <input id="grape_year" name="wine[year]" type="text">
+                <input id="grape_year" name="wine[year]" type="number" class="autocomplete validate" required="" aria-required="true">
                 <label for="grape_year">Year</label>
             </div>
             <div class="input-field inline col s6">
-                <input id="region" type="text" name="wine[region]" class="autocomplete validate">
+                <input id="region" type="text" name="wine[region]" class="autocomplete">
                 <label for="region">Region</label>
             </div>
         </div>
@@ -199,12 +199,12 @@ https://github.com/ga-wdi-boston/full-stack-project/issues/693
 
         <div class="row">
             <div class="input-field inline col s6">
-                <input id="country" type="text" name="wine[country]" class="autocomplete validate">
+                <input id="country" type="text" name="wine[country]" class="autocomplete validate" required="" aria-required="true">
                 <label for="country">Country</label>
             </div>
             <div class="range-field inline col s6">
                 <label for="quantity">Quantity</label>
-                <input id="quantity" type="range" name="wine[quantity]" min="0" max="60" class="validate">
+                <input id="quantity" type="number" name="wine[quantity]" value="" min="0" max="60" class="validate" required="" aria-required="true">
             </div>
         </div>
         <!-- end of row 3 -->
@@ -224,12 +224,12 @@ https://github.com/ga-wdi-boston/full-stack-project/issues/693
 
             <div class="range-field inline col s6">
                 <label for="rating">Rating</label>
-                <input id="rating" type="range" value="0" name="wine[rating]" min="0" max="5" class="validate">
+                <input id="rating" type="range" value="0" name="wine[rating]" min="0" max="5">
             </div>
 
             <div class="range-field inline col s6">
               <label for="price">Price</label>
-              <input id="price" type="range" name="wine[price]" min="0" max="80" class="validate">
+              <input id="price" type="number" name="wine[price]" min="0" max="80" value="" class="validate" required="" aria-required="true">
             </div>
         </div>
 
@@ -237,11 +237,11 @@ https://github.com/ga-wdi-boston/full-stack-project/issues/693
 
         <div class="row">
             <div class="input-field inline col s6">
-                <input placeholder="Tasting Notes" id="notes" name="wine[notes]" type="text" class="validate" data-length="80">
+                <input placeholder="Tasting Notes" id="notes" name="wine[notes]" type="text" data-length="80">
                 <label for="notes">Notes</label>
             </div>
             <div class="input-field inline col s6">
-                <input placeholder="URL Picture" id="url_picture" type="text" name="wine[url_picture]" class="validate">
+                <input placeholder="URL Picture" id="url_picture" type="url" pattern="https?://.+" name="wine[url_picture]" class="validate" required="" aria-required="true">
                 <label for="url_picture">Picture URL</label>
             </div>
         </div>
@@ -342,7 +342,7 @@ https://github.com/ga-wdi-boston/full-stack-project/issues/693
                 <label for="notes">Notes</label>
             </div>
             <div class="input-field inline col s6">
-                <input placeholder="URL Picture" id="wine-url_picture" type="text" name="wine[url_picture]" class="validate">
+                <input placeholder="URL Picture" id="wine-url_picture" type="url"  pattern="https?://.+" name="wine[url_picture]" class="validate">
                 <label for="url_picture">Picture URL</label>
             </div>
         </div>
