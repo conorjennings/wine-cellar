@@ -210,21 +210,26 @@ https://github.com/ga-wdi-boston/full-stack-project/issues/693
         <!-- end of row 3 -->
 
         <div class="row">
-            <div class="input-field inline col s6" id="rating" name="wine[rating]">
-                <select>
-                <option value="0"selected>Score</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
+            <!-- <div class="input-field inline col s6" id="wine-rating">
+                <select  name="wine[rating]">
+                <option name="wine[rating]" value="0">Score</option>
+                <option name="wine[rating]" value="1">1</option>
+                <option name="wine[rating]" value="2">2</option>
+                <option name="wine[rating]" value="3">3</option>
+                <option name="wine[rating]" value="4">4</option>
+                <option name="wine[rating]" value="5">5</option>
               </select>
                 <label>Rating</label>
+            </div> -->
+
+            <div class="range-field inline col s6">
+                <label for="rating">Rating</label>
+                <input id="rating" type="range" value="0" name="wine[rating]" min="0" max="5" class="validate">
             </div>
+
             <div class="range-field inline col s6">
               <label for="price">Price</label>
               <input id="price" type="range" name="wine[price]" min="0" max="80" class="validate">
-
             </div>
         </div>
 
@@ -304,17 +309,24 @@ https://github.com/ga-wdi-boston/full-stack-project/issues/693
         <!-- end of row 3 -->
 
         <div class="row">
-            <div class="input-field inline col s6" id="wine-rating" name="wine[rating]">
-                <select>
-                <option value="0"selected>Score</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
-                <label>Rating</label>
-            </div>
+          <!-- <div class="input-field inline col s6" name="wine[rating]">
+              <select id="wine-rating" name="wine[rating]">
+              <option name="wine[rating]" value="0">Score</option>
+              <option name="wine[rating]" value="1">1</option>
+              <option name="wine[rating]" value="2">2</option>
+              <option name="wine[rating]" value="3">3</option>
+              <option name="wine[rating]" value="4">4</option>
+              <option name="wine[rating]" value="5">5</option>
+            </select>
+              <label>Rating</label>
+          </div> -->
+
+          <div class="range-field inline col s6">
+            <label for="rating">Rating</label>
+            <input id="wine-rating" type="range" name="wine[rating]" min="0" max="5">
+          </div>
+
+
             <div class="range-field inline col s6">
               <label placeholder="Price" for="price">Price</label>
               <input id="wine-price" type="range" name="wine[price]" min="0" max="80" class="validate">

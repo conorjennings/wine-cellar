@@ -3,7 +3,6 @@
 const api = require('./wine-api')
 const ui = require('./wine-ui')
 const getFormFields = require('../../../lib/get-form-fields.js')
-// const helpers = require('./../helpers/helper-events')
 const store = require('../store')
 
 const createWineOpenForm = function () {
@@ -12,22 +11,10 @@ const createWineOpenForm = function () {
   $('.jumbo-quote').hide()
 }
 
-// const createWine = function (event) {
-//   event.preventDefault()
-//   const data = getFormFields(event.target)
-//   if (data.wine.url_picture === 'put URL link to wine label picture here') {
-//     data.wine.url_picture = 'https://raw.githubusercontent.com/conorjennings/wine-cellar/master/assets/images/genericWine.png'
-//   }
-//   api.createWine(data)
-//     .done(ui.createWineSuccess)
-//     .fail(ui.createWineFailure)
-//   onReadWinesApi()
-// }
-
 const createWine = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  if (data.wine.url_picture === 'put URL link to wine label picture here') {
+  if (data.wine.url_picture === '') {
     data.wine.url_picture = 'https://raw.githubusercontent.com/conorjennings/wine-cellar/master/assets/images/genericWine.png'
   }
   api.createWine(data)
@@ -68,8 +55,8 @@ const onReadWinesApi = () => {
 
 const updateWine = function (event) {
   event.preventDefault()
-  // const id = $(this).attr('data-id')
   const data = getFormFields(event.target)
+  console.log('updateWine(), data = ', data)
   api.updateWine(data)
   .then(function (data) {
     ui.updateWineSuccess()
@@ -95,6 +82,7 @@ const populateUpdateForm = function () {
   // event.preventDefault()
   const id = $(this).attr('data-id')
   const wineBottle = findWineById(id)
+  console.log('winebottle is ', wineBottle)
   $('#wine-id').val(wineBottle.id)
   $('#wine-polaroid-name').val(wineBottle.name)
   $('#wine-name').val(wineBottle.name)

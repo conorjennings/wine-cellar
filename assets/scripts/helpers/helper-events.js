@@ -12,7 +12,7 @@ const closeForm = function (formName) {
 
 // Using Durstenfeld shuffle algorithm.
 const onLoadRandomWineQuote = function () {
-  console.log('>> onLoadRandomWineQuote')
+  // console.log('>> onLoadRandomWineQuote')
   let i
   const wineQuotes = [
     `<blockquote class="center-align blockquote-wine">
