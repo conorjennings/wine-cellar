@@ -45,6 +45,12 @@
 
 <main role="main" class="flow-text">
 
+  <!-- MISC SECTION -->
+  <blockquote class="center-align jumbo-quote">
+    <p>"Wine improves with age. The older I get, the better I like it."</p>
+    <footer> ~ Anonymous</footer>
+  </blockquote>
+
  <!-- SIGN UP SECTION -->
   <div class="row container section sign-up-section">
      <form id = "sign-up-form" class="col s12">
@@ -132,11 +138,7 @@
 
    </div>   <!-- End of  Change Password Form -->
 
-  <!-- MISC SECTION -->
-  <blockquote class="center-align">
-    <p>"Wine improves with age. The older I get, the better I like it."</p>
-    <footer>Anonymous</footer>
-  </blockquote>
+
 
 <div id="wine-video" class="panel"> </div>
 
@@ -148,9 +150,9 @@
   <div class="section">
     <div class="row container">
       <h2 class="header">Wine Collection</h2>
-      <button class="grey-text text-lighten-4 wine-list green-grape-color" id ="read-wines">Wine List</button>
+      <h5 class="grey-text text-darken-3 lighten-3 random-wine-quote"></h5>
+      <button class="grey-text text-lighten-4 wine-list green-grape-color wine-read-list" id ="read-wines">Wine List</button>
       <button class="grey-text text-lighten-4 wine-list green-grape-color create-wine-open-form">Add Wine</button>
-      <p class="grey-text text-darken-3 lighten-3 random-wine-quote"></p>
       <div class="list-group" id="wine-collection"></div>  <!-- This is where handlebars dynamically loads the entire list of wines -->
     </div>
   </div>
@@ -167,7 +169,7 @@ https://github.com/ga-wdi-boston/full-stack-project/issues/693
 <!-- ~~~~~~~~~~~~~~~~~~~~ -->
 <!-- CREATE Wine Form   -->
 <!-- ~~~~~~~~~~~~~~~~~~~~ -->
-<div class="row">
+<div class="row container section">
     <form id="create-wine-form" class="col s12 add-wine-form">
         <h3> Add Wine</h3>
 
@@ -251,7 +253,7 @@ https://github.com/ga-wdi-boston/full-stack-project/issues/693
 <!-- ~~~~~~~~~~~~~~~~~~~~ -->
 <!-- Update Wine - Form   -->
 <!-- ~~~~~~~~~~~~~~~~~~~~ -->
-<div class="row">
+<div class="row container section">
     <form id="update-wine-form" class="col s12">
         <h3> Update Wine Listing</h3>
 

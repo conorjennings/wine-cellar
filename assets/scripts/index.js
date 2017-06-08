@@ -5,8 +5,6 @@ const config = require('./config')
 const authEvents = require('./auth/auth-events.js')
 const uxEvents = require('./uxShowHideClear')
 const vinoEvents = require('./vino/wine-events.js')
-// const grapes = require('../../images/grapes.jpg')
-// const html = `<img src=${grapes} />`
 const winePourVideo = require('../../video/redWineSlowPour.mp4')
 const html = `<video loop='1' autoplay class='responsive-video'> <source src=${winePourVideo} type='video/mp4'> </video>`
 

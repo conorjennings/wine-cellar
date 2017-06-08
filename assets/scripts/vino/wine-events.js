@@ -9,7 +9,20 @@ const store = require('../store')
 const createWineOpenForm = function () {
   $('.parallax-section').hide()
   $('#create-wine-form').show()
+  $('.jumbo-quote').hide()
 }
+
+// const createWine = function (event) {
+//   event.preventDefault()
+//   const data = getFormFields(event.target)
+//   if (data.wine.url_picture === 'put URL link to wine label picture here') {
+//     data.wine.url_picture = 'https://raw.githubusercontent.com/conorjennings/wine-cellar/master/assets/images/genericWine.png'
+//   }
+//   api.createWine(data)
+//     .done(ui.createWineSuccess)
+//     .fail(ui.createWineFailure)
+//   onReadWinesApi()
+// }
 
 const createWine = function (event) {
   event.preventDefault()
@@ -18,26 +31,51 @@ const createWine = function (event) {
     data.wine.url_picture = 'https://raw.githubusercontent.com/conorjennings/wine-cellar/master/assets/images/genericWine.png'
   }
   api.createWine(data)
-    .done(ui.createWineSuccess)
-    .fail(ui.createWineFailure)
-  readWines()
+  .then(function (data) {
+    ui.createWineSuccess()
+    onReadWinesApi()
+  })
+  .catch(ui.createWineFailure)
 }
 
-const readWines = function (event) {
+const onReadWines = (event) => {
   event.preventDefault()
-  api.readWines()
-    .done(ui.readWinesSuccess)
-    .fail(ui.readWinesFailure)
+  $('.jumbo-quote').hide()
+  onReadWinesApi()
 }
+
+const onReadWinesApi = () => {
+  api.readWines()
+    .then(ui.readWinesSuccess)
+    .catch(ui.readWinesFailure)
+}
+
+// const readWines = function () {
+//   api.readWines()
+//     .done(ui.readWinesSuccess)
+//     .fail(ui.readWinesFailure)
+// }
+
+// const updateWine = function (event) {
+//   event.preventDefault()
+//   // const id = $(this).attr('data-id')
+//   const data = getFormFields(event.target)
+//   api.updateWine(data)
+//     .done(ui.updateWineSuccess)
+//     .fail(ui.updateWineFailure)
+//   onReadWinesApi()
+// }
 
 const updateWine = function (event) {
   event.preventDefault()
   // const id = $(this).attr('data-id')
   const data = getFormFields(event.target)
   api.updateWine(data)
-    .done(ui.updateWineSuccess)
-    .fail(ui.updateWineFailure)
-  readWines()
+  .then(function (data) {
+    ui.updateWineSuccess()
+    onReadWinesApi()
+  })
+  .catch(ui.updateWineFailure)
 }
 
 const deleteWine = function (event) {
@@ -46,7 +84,7 @@ const deleteWine = function (event) {
   api.deleteWine(id)
   .then(function (id) {
     ui.deleteWineSuccess(id)
-    readWines()
+    onReadWinesApi()
   })
   .catch(ui.deleteWineFailure)
 }
@@ -92,14 +130,16 @@ const onHideCreateWine = function () {
 const onHideUpdateWine = function () {
   $('#update-wine-form').hide()
   $('.parallax-section').show()
-  $('#wine-collection').hide()
+  // $('#wine-collection').hide()
 }
 
 const wineHandlers = () => {
   $('.create-wine-open-form').on('click', createWineOpenForm)
   $('#create-wine-form').on('submit', createWine)
+  // $(document).on('click', '#create-wine-form', createWine)
   $('#create-wine-form').on('reset', onHideCreateWine)
-  $('#read-wines').on('click', readWines)
+  // $('.wine-read-list').on('click', onReadWines)
+  $(document).on('click', '.wine-read-list', onReadWines)
   $(document).on('click', '.update-one-wine', populateUpdateForm)
   $('#update-wine-form').on('submit', updateWine)
   $('#update-wine-form').on('reset', onHideUpdateWine)

@@ -1,5 +1,5 @@
 const uxHandlers = () => {
-  console.log('>>>>>>>>> calling the uxHandlers')
+  // console.log('>>>>>>>>> calling the uxHandlers')
   // Show/hide/clear all authentication forms:
   $('.sign-up-section').hide()
   $('.sign-in-section').hide()

@@ -1,12 +1,15 @@
 'use strict'
 const store = require('../store.js')
 const wineListingHandleBars = require('../templates/wine-listing.handlebars')
+const helpers = require('./../helpers/helper-events')
 
 const createWineSuccess = (data) => {
   // store.wines = data.wines
   $('#create-wine-form').hide()
   $('#create-wine-form').trigger('reset')
   $('.parallax-section').show()
+  const randomWineQuote = helpers.onLoadRandomWineQuote()
+  $('.random-wine-quote').html(randomWineQuote)
 }
 
 const createWineFailure = (error) => {
@@ -14,9 +17,19 @@ const createWineFailure = (error) => {
 }
 
 const readWinesSuccess = (data) => {
-  const showWinesInCellar = wineListingHandleBars({ wines: data.wines })
-  $('#wine-collection').html(showWinesInCellar)
   store.wines = data.wines
+  //  console.log('>>> Entering readWinesSuccess with data ', data)
+  // Sort wines by ID so they are always in the same order.
+  data.wines.sort(function (a, b) {
+    return a.id - b.id
+  })
+  // const showWinesInCellar = wineListingHandleBars({ wines: data.wines })
+  $('#wine-collection').html(wineListingHandleBars({ wines: data.wines }))
+  $('#wine-collection').show()
+  const randomWineQuote = helpers.onLoadRandomWineQuote()
+  $('.random-wine-quote').html(randomWineQuote)
+  // console.log('showWinesInCellar = ', showWinesInCellar)
+  // $('#wine-collection').html(showWinesInCellar)
 }
 
 const readWinesFailure = (error) => {
@@ -26,6 +39,8 @@ const readWinesFailure = (error) => {
 const updateWineSuccess = () => {
   $('#update-wine-form').hide()
   $('#update-wine-form').trigger('reset')
+  const randomWineQuote = helpers.onLoadRandomWineQuote()
+  $('.random-wine-quote').html(randomWineQuote)
 }
 
 const updateWineFailure = (error) => {
