@@ -9,6 +9,7 @@ const createWineOpenForm = function () {
   $('.parallax-section').hide()
   $('#create-wine-form').show()
   $('.jumbo-quote').hide()
+  $('#grape_year').attr('max', new Date().getFullYear())  // Set the max vintage to the current year
 }
 
 const createWine = function (event) {
@@ -64,6 +65,8 @@ const updateWine = function (event) {
   console.log('yrEnteredDate is ', yrEnteredDate)
   if (yrEnteredDate > todayDate) {
     console.log('incorrect year!!!!')
+    $('.update-wine-error-alert').html('Vintage cannot be greater than current year')
+    $('.update-wine-error-alert').show()
   }
   // console.log('updateWine(), data = ', data)
   api.updateWine(data)
@@ -104,6 +107,7 @@ const populateUpdateForm = function () {
   $('#wine-rating').val(wineBottle.rating)
   $('#wine-price').val(wineBottle.price)
   $('#wine-picture').attr('src', wineBottle.url_picture)
+  $('#wine-year').attr('max', new Date().getFullYear())  // Set the max vintage to the current year
 }
 
 const findWineById = function (idToCompare) {
