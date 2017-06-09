@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>novinophobia</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags unless you know what you are doing -->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+      <!-- Do not add `script` tags unless you know what you are doing -->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+
+
+<body>
+  <header>
+
+ <!-- NAV SECTION -->
+  <nav class="menu-bar" role="navigation">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo brand-logo center">NOVINOPHOBIA</a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse show-on-large"><i class="material-icons">menu</i></a>
+
+      <ul class="right hide-on-med-and-down">
+        <!-- <li class="sign-up-menu"><a href="#">Sign Up</a></li>
+        <li class="sign-in-menu"><a href="#">Sign In</a></li>
+        <li class="sign-out-menu"><a href="#">Sign Out</a></li> -->
+        <!-- <li class="change-password-menu"><a href="#">Change Password</a></li> -->
+        <li class="display-current-user"></li>
+
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li class="sign-up-menu"><a href="#">Sign Up</a></li>
+        <li class="sign-in-menu"><a href="#">Sign In</a></li>
+        <li class="sign-out-menu"><a href="#">Sign Out</a></li>
+        <li class="change-password-menu"><a href="#">Change Password</a></li>
+      </ul>
+    </div>
+  </nav>
+ </header>
+
+
+<main role="main" class="flow-text">
+
+  <!-- MISC SECTION -->
+  <blockquote class="center-align jumbo-quote">
+    <p>"Wine improves with age. The older I get, the better I like it."</p>
+    <footer> ~ Anonymous</footer>
+  </blockquote>
+
+ <!-- SIGN UP SECTION -->
+  <div class="row container section sign-up-section">
+     <form id = "sign-up-form" class="col s12">
+       <div class="row">
+         <div class="input-field col s4">
+           <!-- <i class="material-icons prefix">account_circle</i> -->
+           <input name="credentials[email]" id="sign-up-form-email" type="text" class="validate" required="" aria-required="true">
+           <label for="email" data-error="wrong" data-success="correct">Email</label>
+         </div>
+       </div>
+
+       <div class="row">
+           <div class="input-field col s4">
+           <input type="password" name="credentials[password]" id="sign-up-form-password" class="validate" required="" aria-required="true">
+           <label for="last_name">Password</label>
+         </div>
+       </div>
+
+       <div class="row">
+         <div class="input-field col s4">
+           <input type="password" name="credentials[password_confirmation]" id="sign-up-form-password-confirm" class="validate" required="" aria-required="true">
+           <label for="last_name">Confirm Password</label>
+         </div>
+       </div>
+
+       <button type="submit" name="submit" class="waves-effect red-grape-color deep-purple darken-3 btn">
+       Submit </button>
+       <button type="reset" class="btn green-grape-color btn-secondary">Reset</button>
+
+       <div class="progress">
+           <div class="indeterminate"></div>
+       </div>
+
+       <div class="auth-message" id="sign-up-message">&nbsp;</div>
+     </form>
+   </div>   <!-- End of Sign Up Form -->
+
+  <!-- SIGN IN SECTION -->
+  <div class="row container section sign-in-section">
+    <form id = "sign-in-form" class="col s12">
+      <div class="row">
+        <div class="input-field col s4">
+          <input name="credentials[email]" id="sign-in-form-email" type="text" class="validate" required="" aria-required="true" >
+          <label for="email" data-error="wrong">Email</label>
+        </div>
+      </div>
+
+      <div class="row">
+          <div class="input-field col s4">
+          <input type="password" name="credentials[password]" id="sign-in-form-password"  class="validate" required="" aria-required="true">
+          <label for="last_name">Password</label>
+        </div>
+      </div>
+
+      <button type="submit" name="submit" class="waves-effect red-grape-color deep-purple darken-3 btn">
+      Submit </button>
+      <button type="reset" class="btn green-grape-color btn-secondary">Reset</button>
+    </form>
+    <div class="auth-message" id="sign-in-message">&nbsp;</div>
+  </div>   <!-- End of Sign In Form -->
+
+
+   <!-- CHANGE PASSWORD SECTION -->
+   <!-- <div class="row container section change-password-section">
+     <form id = "change-password-form" class="col s12">
+
+       <div class="row">
+           <div class="input-field col s4 validate" required="" aria-required="true">
+           <input type="password" name="passwords[old]" id="old-password">
+           <label for="last_name">Old Password</label>
+         </div>
+       </div>
+
+       <div class="row">
+           <div class="input-field col s4 validate" required="" aria-required="true">
+           <input type="password" name="passwords[new]" id="new-password">
+           <label for="last_name">New Password</label>
+         </div>
+       </div>
+
+       <button type="submit" name="submit" class="waves-effect red-grape-color deep-purple darken-3 btn">
+       Submit </button>
+       <button type="reset" class="btn green-grape-color btn-secondary">Reset</button>
+     </form>
+
+   </div>    -->
+   <!-- End of  Change Password Form -->
+
+<!-- ~~~~~~~~~~~~~~~~~~~~ -->
+<!-- CREATE Wine Form     -->
+<!-- ~~~~~~~~~~~~~~~~~~~~ -->
+<div class="row container section create-wine-section">
+    <form id="create-wine-form" class="col s12 add-wine-form">
+        <h3> Add Wine</h3>
+
+          <div class="row">
+            <div class="input-field inline col s6">
+                <input type="text" id="wine_name" name="wine[name]" class="autocomplete validate" required="" aria-required="true">
+                <label for="wine_name" data-error="Please enter a valid wine">Name</label>
+            </div>
+            <div class="input-field inline col s6">
+                <input id="grape_name" name="wine[grape]" type="text" class="autocomplete validate" required="" aria-required="true">
+                <label for="grape_name">Grape</label>
+            </div>
+        </div>
+        <!-- end of row 1 -->
+
+        <div class="row">
+            <div class="input-field inline col s6">
+                <input id="grape_year" name="wine[year]" type="number" min= "2000" max="" class="autocomplete validate" required="" aria-required="true">
+                <label for="grape_year">Year</label>
+            </div>
+            <div class="input-field inline col s6">
+                <input id="region" type="text" name="wine[region]" class="autocomplete">
+                <label for="region">Region</label>
+            </div>
+        </div>
+        <!-- end of row 2 -->
+
+        <div class="row">
+            <div class="input-field inline col s6">
+                <input id="country" type="text" name="wine[country]" class="autocomplete validate" required="" aria-required="true">
+                <label for="country">Country</label>
+            </div>
+            <div class="range-field inline col s6">
+                <label for="quantity">Quantity</label>
+                <input id="quantity" type="number" name="wine[quantity]" value="" min="0" max="60" class="validate" required="" aria-required="true">
+            </div>
+        </div>
+        <!-- end of row 3 -->
+
+        <div class="row">
+            <div class="range-field inline col s6">
+                <label for="rating">Rating</label>
+                <input id="rating" type="range" value="0" name="wine[rating]" min="0" max="5">
+            </div>
+
+            <div class="range-field inline col s6">
+              <label for="price">Price</label>
+              <input id="price" type="number" name="wine[price]" min="0" max="80" value="" class="validate" required="" aria-required="true">
+            </div>
+        </div>
+        <!-- end of row 4 -->
+
+        <div class="row">
+            <div class="input-field inline col s6">
+                <input placeholder="Tasting Notes" id="notes" name="wine[notes]" type="text" data-length="80">
+                <label for="notes">Notes</label>
+            </div>
+            <div class="input-field inline col s6">
+                <input placeholder="URL Picture" id="url_picture" type="url" pattern="https?://.+" name="wine[url_picture]" class="validate" required="" aria-required="true">
+                <label for="url_picture">Picture URL</label>
+            </div>
+        </div>
+
+        <!-- end of row 5 -->
+        <input type="submit" value="Add" class="waves-effect red-grape-color deep-purple darken-3 btn"></input>
+        <input type="reset" value="Cancel" id="closeCreateForm" class="btn green-grape-color btn-secondary"></input>
+    </form>
+</div>
+
+<!-- end of DIV for CREATE wine form -->
+
+
+<!-- ~~~~~~~~~~~~~~~~~~~~ -->
+<!-- Update Wine - Form   -->
+<!-- ~~~~~~~~~~~~~~~~~~~~ -->
+<div class="row container section update-wine-section">
+    <form id="update-wine-form" class="col s12">
+        <h3> Update Wine Listing</h3>
+
+        <div id="update-form-picture">
+            <div class="polaroid center">
+                <p></p>
+                <img class="center-align responsive-img" id="wine-picture" />
+            </div>
+        </div>
+
+        <input type="text" id="wine-id" name="wine[id]" placeholder="id" hidden required>
+
+        <div class="row">
+            <div class="input-field inline col s6">
+                <input placeholder="Vineyard Name" type="text" id="wine-name" name="wine[name]" class="autocomplete validate" required="" aria-required="true">
+                <label for="wine_name" data-error="Please enter a valid wine">Name</label>
+            </div>
+            <div class="input-field inline col s6">
+                <input placeholder="Grape Variety" id="wine-grape" name="wine[grape]" type="text" class="autocomplete validate" required="" aria-required="true">
+                <label for="grape_name">Grape</label>
+            </div>
+        </div>
+        <!-- end of row 1 -->
+
+        <div class="row">
+            <div class="input-field inline col s6">
+                <input placeholder="Vintage" id="wine-year" name="wine[year]" min= "2000" type="number" class="autocomplete validate" required="" aria-required="true">
+                <label for="grape_year">Year</label>
+            </div>
+            <div class="input-field inline col s6">
+                <input placeholder="Region" id="wine-region" type="text" name="wine[region]" class="autocomplete">
+                <label for="region">Region</label>
+            </div>
+        </div>
+        <!-- end of row 2 -->
+
+        <div class="row">
+            <div class="input-field inline col s6">
+                <input placeholder="Country" id="wine-country" type="text" name="wine[country]" class="autocomplete validate" required="" aria-required="true">
+                <label for="country">Country</label>
+            </div>
+            <div class="range-field inline col s6">
+                <label for="quantity">Quantity</label>
+                <input placeholder="Quantity" id="wine-quantity" type="number" name="wine[quantity]" value="" min="0" max="60" class="validate" required="" aria-required="true">
+            </div>
+        </div>
+        <!-- end of row 3 -->
+
+        <div class="row">
+          <div class="range-field inline col s6">
+            <label for="rating">Rating</label>
+            <input id="wine-rating" type="range" name="wine[rating]" min="0" max="5">
+          </div>
+
+            <div class="range-field inline col s6">
+              <label placeholder="Price" for="price">Price</label>
+              <input id="wine-price" type="range" name="wine[price]" min="0" max="80" class="validate" required="" aria-required="true">
+            </div>
+        </div>
+        <!-- end of row 4 -->
+
+        <div class="row">
+            <div class="input-field inline col s6">
+                <input placeholder="Tasting Notes" id="wine-notes" name="wine[notes]" type="text" data-length="80">
+                <label for="notes">Notes</label>
+            </div>
+            <div class="input-field inline col s6">
+                <input placeholder="URL Picture" id="wine-url_picture" type="url"  pattern="https?://.+" name="wine[url_picture]" class="validate" required="" aria-required="true">
+                <label for="url_picture">Picture URL</label>
+            </div>
+        </div>
+        <!-- end of row 5 -->
+        <input type="submit" value="Update" class="waves-effect red-grape-color deep-purple darken-3 btn"></input>
+        <input type="reset" value="Cancel" id="closeResetForm" class="btn green-grape-color btn-secondary"></input>
+
+    </form>
+</div>  <!-- end of DIV for update wine form -->
+
+
+<!-- VIDEO SECTION -->
+<div id="wine-video" class="panel"> </div>
+
+<div class="parallax-section">
+      <div class="parallax-container valign-wrapper">
+        <div class="section no-pad-bot">
+          <div class="container">
+            <div class="row center">
+              <h5 class="header col s12 light grey-text text-lighten-4">Novinophobia - The Fear Of Running Out Of Wine</h5>
+            </div>
+          </div>
+        </div>
+        <div class="parallax" id="preload-red-wine-jpg"><img src="https://raw.githubusercontent.com/conorjennings/wine-cellar/master/assets/images/glass-red-wine-grape.jpg" alt="glass-red-wine" class="responsive-img"></div>
+      </div>
+
+    <div class="section wine-cellar-section">
+      <div class="row container">
+        <h2 class="header">Wine Collection</h2>
+        <h5 class="grey-text text-darken-3 lighten-3 random-wine-quote"></h5>
+        <button class="grey-text text-lighten-4 wine-list green-grape-color wine-read-list" id ="read-wines">Wine List</button>
+        <button class="grey-text text-lighten-4 wine-list green-grape-color create-wine-open-form">Add Wine</button>
+        <div class="list-group" id="wine-collection"></div>  <!-- This is where handlebars dynamically loads the entire list of wines -->
+      </div>
+    </div>
+
+    <!-- CHANGE PASSWORD SECTION INSIDE PARALLAX -->
+    <div class="section change-password-section">
+            <div class="row container">
+      <form id = "change-password-form" class="col s12">
+
+        <div class="row">
+            <div class="input-field col s4 validate" required="" aria-required="true">
+            <input type="password" name="passwords[old]" id="old-password">
+            <label for="last_name">Old Password</label>
+          </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s4 validate" required="" aria-required="true">
+            <input type="password" name="passwords[new]" id="new-password">
+            <label for="last_name">New Password</label>
+          </div>
+        </div>
+
+        <button type="submit" name="submit" class="waves-effect red-grape-color deep-purple darken-3 btn">
+        Submit </button>
+        <button type="reset" class="btn green-grape-color btn-secondary">Reset</button>
+      </form>
+
+    </div>   <!-- End of  Change Password Form -->
+  </div>
+
+
+
+  <!-- Used this approach to display images deployed to production since relative path to img did not work:
+  https://github.com/ga-wdi-boston/full-stack-project/issues/693  -->
+  <div class="parallax-container valign-wrapper">
+
+    <div class="parallax"id="preload-white-wine-jpg"><img src="https://raw.githubusercontent.com/conorjennings/wine-cellar/master/assets/images/glass-of-white-wine.jpg" alt="glass white wine" class="responsive-img"></div>
+  </div>
+
+  </div>  <!-- End of Parallax Section -->
+
+</main>
+
+<footer class="page-footer">
+  <div class="container">
+    <div class="row">
+      <div class="center">
+        <p class="grey-text text-lighten-4">Thank You to everyone at WDI-LM01 who inspired me along the way with all your fabulous work.. <i class="material-icons">local_bar</i></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
