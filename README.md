@@ -1,7 +1,7 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
 
-# wine-cellar
+# wine-cellar - Capstone Project
 
 ## DESCRIPTION
 
@@ -30,12 +30,12 @@ is deployed online at the URL found below.
 5.   Use of jQuery and Handlebars templates for DOM manipulation and event
      handling.
 
-6.  Use of MaterializeCSS front end framework.
+6.  Use of Material Design (http://materializecss.com/) front end framework.
 
 
 # Front-End Client Application URL
 
-https://conorjennings.github.io/wine-cellar/
+-   [`Front-End Deployed App`] (https://conorjennings.github.io/wine-cellar/)
 
 
 ## GitHub Application Repositories
@@ -48,7 +48,6 @@ https://conorjennings.github.io/wine-cellar/
 
 -   [`Heroku API URL`](https://wine-cellar-api.herokuapp.com/)
 
-## Project Requirements
 
 
 ## List of Servers Used
@@ -57,7 +56,34 @@ Front-end:
   GRUNT server (http://localhost:7165/)
 
 Back-end Rails server:
-  http://localhost:4741/
+  http://localhost:4741/ (for development only)
+  https://wine-cellar-api.herokuapp.com (production only)
+
+
+  ## Wireframes
+  My wireframes can be found at the links below. As I got approached my MVP I then reviewed and tweaked my design to make it cleaner and more understandable.
+  ![Wireframe](http://i.imgur.com/1AlGXOV.jpg)
+  ![Wireframe](http://i.imgur.com/R1c28Jm.jpg)
+
+  ## ERD
+  This is stored locally on GitHub in this location of the repo:
+  ![ERD](images/wine-cellar-ERD.jpeg)
+
+  ## Sample Screens:
+  ![Wireframe](http://i.imgur.com/1Hbi30z.png)
+  ![Wireframe](http://i.imgur.com/OGJ7imL.png)
+  ![Wireframe](http://i.imgur.com/5MDTx0G.png)
+
+  ## User Stories Used
+
+  1.	As a user, I want to sign up and create an account.
+  2.	As a user, I want to sign in so I can inventory my wine cellar.
+  3.	As a user, I want to be able to change my password.
+  4.	As a user, I want to be able to sign out of the application.
+  5.	As a user, I want to create a new bottle of wine.
+  6.	As a user, I want to view all wines in my cellar.
+  7.	As a user, I want to update an existing wine in my cellar.
+  8.	As a user, I want to be able to delete wine in my cellar.
 
 
 ## Planning and Software Design - Development Process
@@ -65,39 +91,20 @@ Back-end Rails server:
 
 ## Planning - Problem Solving Strategy
 
-1.  Using Google Chrome Development Tools (Inspect).
-2.  Add console.log messages to code.
-3.  Add debugger and step through code examining variables and logic.
-4.  Google issues (i.e. meterializecss)
+1.  Using Google Chrome Development Tools (Inspect) was a big help on this project in detecting niggly issues.
+2.  Added console.log messages to codein more places that I care to remember, but they helped out big time.
+3.  Occasionally added the Chrome debugger and step through code examining variables and logic.
+4.  Google issues (i.e. meterializecss) to ramp up on Material Design
 
 ## Coding Standards
 
-1.  Used git source code control and GitHub repositories daily.
+1.  Used git source code control and GitHub repositories daily. Created several branches (authentication, crud, ux, debug, caps).
+2.  Deployed often and deployed early. This saved me a ton of last minute panic scenarios from prior projects!
 2.  Commented code to describe use of functions and variables as well as authorization and client/API logic.
-3.  Followed all linter suggestions including proper spacing and indentations.
+3.  Followed all linter suggestions including proper spacing and indentations. Had to turn off one linter that conflicted with Materialize.Toast()
 4.  Frequent and small commits to git hub repository.
 5.  Followed separation of concerns as often as possible.
 
-
-## Wireframes
-Our wireframes evolved throughout the course of the project. As we inched closer to MVP we iterated over our design to make it neater and more advanced.
-![Wireframe](http://i.imgur.com/1AlGXOV.jpg)
-![Wireframe](http://i.imgur.com/R1c28Jm.jpg)
-
-## ERD
-![ERD](images/wine-cellar-ERD.jpeg)
-
-
-## User Stories Used
-
-1.	As a user, I want to sign up and create an account.
-2.	As a user, I want to sign in so I can inventory my wine cellar.
-3.	As a user, I want to be able to change my password.
-4.	As a user, I want to be able to sign out of the application.
-5.	As a user, I want to create a new bottle of wine.
-6.	As a user, I want to view all wines in my cellar.
-7.	As a user, I want to update an existing wine in my cellar.
-8.	As a user, I want to be able to delete wine in my cellar.
 
 
 ## [License](LICENSE)
