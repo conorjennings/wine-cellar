@@ -66,8 +66,8 @@ Back-end Rails server:
   ![Wireframe](http://i.imgur.com/R1c28Jm.jpg)
 
   ## ERD
-  This is stored locally on GitHub in this location of the repo:
-  ![ERD](images/wine-cellar-ERD.jpeg)
+  This is stored here on imgur:
+  ![ERD](http://http://i.imgur.com/idSuf49.jpg)
 
   ## Sample Screens:
   ![Wireframe](http://i.imgur.com/1Hbi30z.png)
