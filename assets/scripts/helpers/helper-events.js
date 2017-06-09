@@ -1,17 +1,11 @@
 'use strict'
 
-const setFocusToTextBox = function(IdName) {
+const setFocusToTextBox = function (IdName) {
   document.getElementById(IdName).focus()
 }
 
-const closeForm = function(formName) {
-  //  formName.close()
-  $('.add-wine-form').val('')
-  $('#create-wine-form').hide()
-}
-
 // Using Durstenfeld shuffle algorithm.
-const onLoadRandomWineQuote = function() {
+const onLoadRandomWineQuote = function () {
   let i
   const wineQuotes = [
     `<blockquote class="center-align blockquote-wine">
@@ -59,6 +53,5 @@ const onLoadRandomWineQuote = function() {
 
 module.exports = {
   setFocusToTextBox,
-  closeForm,
   onLoadRandomWineQuote
 }

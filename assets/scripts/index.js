@@ -13,7 +13,6 @@ $(() => {
   authEvents.authHandlers()
   uxEvents.uxHandlers()
   vinoEvents.wineHandlers()
-  // $('#grape-picture').append(html)
   $('#wine-video').append(html)
 
   // I added this block of code from this solution to ensure the menu closed when I
@@ -24,12 +23,6 @@ $(() => {
     edge: 'left', // Choose the horizontal origin
     closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
     draggable: true
-  })
-
-// Needed for using drop down menus:
-// Source: http://materializecss.com/forms.html#select-initialization
-  $(document).ready(function () {
-    $('select').material_select()
   })
 
   // This is needed for auto complete in forms. Source: http://materializecss.com/forms.html
@@ -80,13 +73,7 @@ $(() => {
 // use require without a reference to ensure a file is bundled
 require('./example')
 
-// Source: http://materializecss.com/media.html
-// For implementing Material Box for pictures of wine bottles
-$(document).ready(function () {
-  $('.materialboxed').materialbox()
-})
-
-// To initialize  the parallax compoenent of materializecss, the following is
+// To initialize  the parallax component of materializecss, the following is
 // required per their API.
 // http://materializecss.com/parallax.html
 $(document).ready(function () {

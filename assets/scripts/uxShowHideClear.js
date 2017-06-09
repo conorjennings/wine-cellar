@@ -7,10 +7,10 @@ const uxHandlers = () => {
   $('.sign-out-menu').hide()
   $('.progress').hide()
   $('.parallax-section').hide()
-  $('#create-wine-form').hide()
-  $('#update-wine-form').hide()
+  $('.create-wine-section').hide()
+  $('.update-wine-section').hide()
   $('#closeResetForm').on('click', function () {
-    $('#create-wine-form').hide()
+    $('.create-wine-section').hide()
     $('#wine_name').val('')
     $('wine_grape').val('')
     $('wine_year').val('')

@@ -1,6 +1,3 @@
-// $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
-// @import '~bootstrap-sass/assets/stylesheets/bootstrap';
-// @import 'colors';
 @import 'vino';
 @import 'style';
 @import 'colors';
@@ -33,16 +30,6 @@ body {
 .mdl-textfield__label {
   margin-bottom: 0;
 }
-//
-// .card {
-//   max-width: 400px;
-//   height: 400px;
-//   background:
-//   margin: 50px auto;
-//   box-shadow: 0 3px 5px rgba(0,0,0,0.1);
-//   position: relative;
-//   overflow: hidden;
-// }
 
 // This code is used to preload the parallax pictures into cache before page loads:
 #preload-red-wine-jpg { background: url('https://raw.githubusercontent.com/conorjennings/wine-cellar/master/assets/images/glass-red-wine-grape.jpg') no-repeat -9999px -9999px; }

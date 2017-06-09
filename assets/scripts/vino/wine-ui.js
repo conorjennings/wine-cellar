@@ -5,7 +5,7 @@ const helpers = require('./../helpers/helper-events')
 
 const createWineSuccess = (data) => {
   // store.wines = data.wines
-  $('#create-wine-form').hide()
+  $('.create-wine-section').hide()
   $('#create-wine-form').trigger('reset')
   $('.parallax-section').show()
   const randomWineQuote = helpers.onLoadRandomWineQuote()
@@ -34,7 +34,7 @@ const readWinesFailure = (error) => {
 }
 
 const updateWineSuccess = () => {
-  $('#update-wine-form').hide()
+  $('.update-wine-section').hide()
   $('#update-wine-form').trigger('reset')
   const randomWineQuote = helpers.onLoadRandomWineQuote()
   $('.random-wine-quote').html(randomWineQuote)

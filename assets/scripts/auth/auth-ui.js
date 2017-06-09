@@ -44,6 +44,7 @@ const signInSuccess = (data) => {
   $('.sign-up-menu').hide()
   $('.change-password-menu').show()
   $('.sign-up-section').hide()
+  $('.parallax').parallax()
   // const randomWineQuote = onLoadRandomWineQuote(wineQuotes)
   // $('.random-wine-quote').append(randomWineQuote)
   $('.chore-menu').show()

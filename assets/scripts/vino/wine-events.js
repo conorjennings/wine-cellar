@@ -7,7 +7,7 @@ const store = require('../store')
 
 const createWineOpenForm = function () {
   $('.parallax-section').hide()
-  $('#create-wine-form').show()
+  $('.create-wine-section').show()
   $('.jumbo-quote').hide()
   $('#grape_year').attr('max', new Date().getFullYear())  // Set the max vintage to the current year
 }
@@ -41,15 +41,6 @@ const onReadWinesApi = () => {
 const updateWine = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-  // const todayDate = new Date().toJSON().slice(0, 10).replace(/-/g, '/')
-// This converts the string version of date to an actual date version for comparison
-// to ensure a user cannot enter a task BEFORE today's date.
-  // const yrEnteredDate = new Date(data.wine.year).toJSON().slice(0, 10).replace(/-/g, '/')
-  //
-  // if (yrEnteredDate > todayDate) {
-  //   $('.update-wine-error-alert').html('Vintage cannot be greater than current year')
-  //   $('.update-wine-error-alert').show()
-  // }
   api.updateWine(data)
   .then(function (data) {
     ui.updateWineSuccess()
@@ -71,7 +62,7 @@ const deleteWine = function (event) {
 
 const populateUpdateForm = function () {
   $('.parallax-section').hide()
-  $('#update-wine-form').show()
+  $('.update-wine-section').show()
   // event.preventDefault()
   const id = $(this).attr('data-id')
   const wineBottle = findWineById(id)
@@ -104,12 +95,12 @@ const findWineById = function (idToCompare) {
 }
 
 const onHideCreateWine = function () {
-  $('#create-wine-form').hide()
+  $('.create-wine-section').hide()
   $('.parallax-section').show()
 }
 
 const onHideUpdateWine = function () {
-  $('#update-wine-form').hide()
+  $('.update-wine-section').hide()
   $('.parallax-section').show()
   // $('#wine-collection').hide()
 }
