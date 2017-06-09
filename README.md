@@ -67,7 +67,7 @@ Back-end Rails server:
 
   ## ERD
   This is stored here on imgur:
-  ![ERD](http://http://i.imgur.com/idSuf49.jpg)
+  ![Wireframe](http://i.imgur.com/idSuf49.jpg)
 
   ## Sample Screens:
   ![Wireframe](http://i.imgur.com/1Hbi30z.png)
