@@ -73,6 +73,11 @@ const onShowSignUp = function () {
 
 const onShowChangePassword = function () {
   $('.change-password-section').show()
+  $('.wine-cellar-section').hide()
+  $('.delete-wine-section').hide()
+  $('.update-wine-section').hide()
+  $('.create-wine-section').hide()
+  $('#create-wine-form').trigger('reset')
 }
 
 const onHideChangePassword = function () {

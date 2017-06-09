@@ -98,12 +98,9 @@ const signOutSuccess = () => {
   $('.delete-wine-section').hide()
   $('.update-wine-section').hide()
   $('.create-wine-section').hide()
-  $('.get-one-wine-section').hide()
   // $('#sign-in-form').trigger('reset')
   // $('#sign-up-form').trigger('reset')
   // $('#change-password').trigger('reset')
-  $('#wine-content').empty()
-  $('#one-wine-content').empty()
 }
 
 const signOutFailure = (error) => {
@@ -116,6 +113,7 @@ const changePasswordSuccess = () => {
   $('#change-password-form').trigger('reset')
   $('.change-password-section').hide()
   $('.progress').hide()
+  $('.wine-cellar-section').show()
 }
 
 const changePasswordFailure = (error) => {

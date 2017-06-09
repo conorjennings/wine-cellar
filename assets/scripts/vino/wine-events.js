@@ -38,6 +38,11 @@ const onReadWinesApi = () => {
     .catch(ui.readWinesFailure)
 }
 
+const onReadWinesAfterDeleteApi = () => {
+  api.readWines()
+    .then(ui.readWinesAfterDeleteSuccess)
+    .catch(ui.readWinesFailure)
+}
 const updateWine = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
@@ -55,7 +60,7 @@ const deleteWine = function (event) {
   api.deleteWine(id)
   .then(function (id) {
     ui.deleteWineSuccess(id)
-    onReadWinesApi()
+    onReadWinesAfterDeleteApi()
   })
   .catch(ui.deleteWineFailure)
 }
